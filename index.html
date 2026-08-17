@@ -1,56 +1,519 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Deutch TOOLS</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="jscript.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🇩🇪 Learn Deutsch TOOLS — La Boîte à Outils Complète d'Allemand</title>
+  <meta name="description" content="Plateforme gratuite et interactive pour apprendre l'allemand : déclinaisons des cas et adjectifs, conjugaisons audio, flashcards 3D, dialogues réels, dictée et exercices Satzbau.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
-    <header>
-        <h1>🇩🇪 Learn Deutsch TOOLS</h1>
-        <p>Sitesweb - Fiches - Exercices - Tips…</p>
-    </header>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
 
-    <nav>
-        <ul>
-            <li><button class="nav-btn active" data-section="Section1">📖 Section1</button></li>
-            <li><button class="nav-btn" data-section="Section2">🔄 Section2präp.</button></li>
-        </ul>
-    </nav>
+  <!-- ========================================== -->
+  <!-- Top Navigation Bar                         -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-700 to-purple-600 flex items-center justify-center text-white font-black text-xl shadow-md group-hover:scale-105 transition">
+            🇩🇪
+          </div>
+          <div>
+            <div class="font-extrabold text-slate-900 text-lg tracking-tight group-hover:text-indigo-600 transition">
+              Deutsch<span class="text-indigo-600">TOOLS</span>
+            </div>
+            <p class="text-[10px] text-slate-400 font-semibold tracking-wider uppercase">Apprendre l'allemand</p>
+          </div>
+        </a>
 
-    <div class="container">
-        <!-- SECTION Section1 -->
-        <section id="Section1" class="active">
-            <h2>Introduction à la Grammaire Allemande</h2>
-            
-            <h3>Qu'allons-nous apprendre ?</h3>
-            <p>Cette plateforme te permet de maîtriser trois piliers essentiels de la grammaire allemande :</p>
-            
-            <h3>1️⃣ Les Section2präpositionen (Prépositions Mixtes)</h3>
-            <p>Ces prépositions changent de cas selon le contexte :</p>
-            <div class="mnemonic">
-                <strong>💡 Moyen mnémonique :</strong> <br>
-                <strong class="dativ">DATIV (Où ? - Statique)</strong> : "Die Sache liegt DORT" (La chose se trouve LÀ) <br>
-                <strong class="akkusativ">AKKUSATIV (Où ? Vers ? - Mouvement)</strong> : "Ich gehe DORTHIN" (Je vais VERS LÀ)
+        <!-- Desktop Menu -->
+        <nav class="hidden xl:flex items-center gap-1">
+          <a href="index.html" class="nav-link px-2.5 py-1.5 rounded-lg text-xs font-bold text-indigo-600 bg-indigo-50 transition">Accueil</a>
+          <a href="pages/declinaisons.html" class="nav-link px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Les Cas</a>
+          <a href="pages/adjectifs-declinaisons.html" class="nav-link px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Adjectifs</a>
+          <a href="pages/conjugaison.html" class="nav-link px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Conjugaison</a>
+          <a href="pages/vocabulaire.html" class="nav-link px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Vocabulaire</a>
+          <a href="pages/dialogues.html" class="nav-link px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Dialogues</a>
+          <a href="pages/ecoute-dictee.html" class="nav-link px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Dictée Audio</a>
+          <a href="pages/exercices.html" class="nav-link px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Exercices</a>
+          <a href="pages/grammaire.html" class="nav-link px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Grammaire</a>
+          <a href="pages/ressources.html" class="nav-link px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Ressources</a>
+        </nav>
+
+        <!-- Right: Search & User Progress Badges -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <!-- Streak & XP Indicator -->
+          <div class="hidden sm:flex items-center gap-2 bg-slate-100 border border-slate-200/80 rounded-xl px-2.5 py-1 text-xs font-bold text-slate-700">
+            <span class="flex items-center gap-1 text-amber-600">
+              🔥 <span class="user-streak-count">1 j</span>
+            </span>
+            <span class="text-slate-300">|</span>
+            <span class="flex items-center gap-1 text-indigo-600">
+              ⚡ <span class="user-xp-count">45 XP</span>
+            </span>
+          </div>
+
+          <!-- Quick Search Button -->
+          <div class="relative">
+            <input type="text" id="global-search-input" placeholder="Chercher un outil, verbe, règle... (ex: dativ)" 
+                   class="hidden lg:block w-56 pl-8 pr-3 py-1.5 text-xs bg-slate-100 hover:bg-slate-200/70 focus:bg-white focus:w-64 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+            <span class="hidden lg:block absolute left-2.5 top-2 text-slate-400 text-xs">🔍</span>
+            <div id="global-search-results" class="hidden absolute right-0 mt-2 w-80 max-h-96 overflow-y-auto bg-white border border-slate-200 shadow-2xl rounded-xl p-2 z-50"></div>
+          </div>
+
+          <!-- Mobile menu toggle button -->
+          <button id="mobile-menu-btn" class="xl:hidden p-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition" aria-label="Menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden xl:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-5 space-y-1">
+      <a href="index.html" class="block px-3 py-2 rounded-lg text-sm font-bold text-indigo-600 bg-indigo-50">🏠 Accueil</a>
+      <a href="pages/declinaisons.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">📖 Les 4 Cas & Prépositions</a>
+      <a href="pages/adjectifs-declinaisons.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🎨 Déclinaisons des Adjectifs</a>
+      <a href="pages/conjugaison.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🔄 Conjugateur & Verbes</a>
+      <a href="pages/vocabulaire.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🗂️ Flashcards & Vocabulaire</a>
+      <a href="pages/dialogues.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">💬 Dialogues & Situations</a>
+      <a href="pages/ecoute-dictee.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🎧 Dictée Audio & Écoute</a>
+      <a href="pages/exercices.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🎯 Exercices & Satzbau</a>
+      <a href="pages/grammaire.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">📚 Guide Grammatical</a>
+      <a href="pages/ressources.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🛠️ Outils & Ressources</a>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- Hero Section                               -->
+  <!-- ========================================== -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-indigo-900 via-slate-900 to-slate-950 text-white pt-16 pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#818cf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left Hero Copy -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-bold tracking-wide">
+            <span>🇩🇪 100% Gratuit & Sans Inscription</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+            Maîtrisez la langue allemande avec <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-300 to-rose-300">clarté et méthode</span>.
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl font-normal leading-relaxed">
+            Fini les blocages sur les déclinaisons, les prépositions mixtes ou les terminaisons d'adjectifs. Accédez à une boîte à outils interactive complète avec audio natif, simulateurs en temps réel, flashcards 3D et dialogues pratiques.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+            <a href="pages/declinaisons.html" class="px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-sm sm:text-base shadow-lg shadow-indigo-600/30 transition transform hover:-translate-y-0.5">
+              🚀 Explorer les Cas
+            </a>
+            <a href="pages/adjectifs-declinaisons.html" class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold text-sm sm:text-base transition">
+              🎨 Simulateur Adjectifs
+            </a>
+            <a href="pages/dialogues.html" class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold text-sm sm:text-base transition">
+              💬 Dialogues Pratiques
+            </a>
+          </div>
+
+          <!-- Quick Stats Pills -->
+          <div class="grid grid-cols-3 gap-3 pt-4 border-t border-slate-800/80 max-w-md mx-auto lg:mx-0">
+            <div class="text-center lg:text-left">
+              <div class="text-2xl font-black text-amber-400">4 Cas</div>
+              <div class="text-xs text-slate-400">Tableaux & Quiz</div>
+            </div>
+            <div class="text-center lg:text-left">
+              <div class="text-2xl font-black text-emerald-400">50+ Verbes</div>
+              <div class="text-xs text-slate-400">Audio & Temps</div>
+            </div>
+            <div class="text-center lg:text-left">
+              <div class="text-2xl font-black text-indigo-400">8 Outils</div>
+              <div class="text-xs text-slate-400">Interactifs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Interactive Card (Daily Word & Quick Check) -->
+        <div class="lg:col-span-5">
+          <div class="bg-white text-slate-900 rounded-3xl p-6 shadow-2xl border border-slate-100 relative">
+            <div id="daily-word-card">
+              <!-- Rendered via main.js -->
+              <div class="animate-pulse space-y-3">
+                <div class="h-4 bg-slate-200 rounded w-1/3"></div>
+                <div class="h-8 bg-slate-200 rounded w-2/3"></div>
+                <div class="h-12 bg-slate-200 rounded"></div>
+              </div>
             </div>
 
-            <h3>2️⃣ Les Mots Directionnels</h3>
-            <p>Des adverbes qui précisent la direction du mouvement :</p>
-            <ul>
-                <li><strong>rein</strong> (entrer) / <strong>raus</strong> (sortir)</li>
-                <li><strong>rauf</strong> (monter) / <strong>runter</strong> (descendre)</li>
-                <li><strong>rüber</strong> (traverser)</li>
-            </ul>
+            <!-- Mini Quick Tip -->
+            <div class="mt-4 pt-4 border-t border-slate-100">
+              <div class="flex items-center gap-2 text-xs font-bold text-indigo-600 mb-1">
+                <span>💡 Règle d'or de la semaine</span>
+              </div>
+              <p class="text-xs text-slate-600">
+                <strong>Wechselpräpositionen :</strong> Position statique (<em>Wo?</em>) = <strong>Dativ</strong>. Mouvement dirigé (<em>Wohin?</em>) = <strong>Akkusativ</strong> !
+              </p>
+            </div>
+          </div>
+        </div>
 
-            <h3>Structure du Cours</h3>
-            <p>Chaque section contient :</p>
-            <ul>
-                <li>✅ Li 1</li>
-                <li>✅ Li 2</li>
-            </ul>
-        </section>
+      </div>
     </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- Main Learning Tools Directory Grid        -->
+  <!-- ========================================== -->
+  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
+        Boîte à Outils Complète
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+        Tous les modules interactifs
+      </h2>
+      <p class="text-base text-slate-600 mt-2">
+        Des modules structurés, interactifs et conçus pour éliminer les pièges courants des francophones.
+      </p>
+    </div>
+
+    <!-- 8 Primary Tool Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Card 1: Déclinaisons & Cas -->
+      <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-xl hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl font-black group-hover:scale-110 transition">
+              📐
+            </span>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
+              Fondamental
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition">
+            Les 4 Cas Allemands
+          </h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Nominativ, Akkusativ, Dativ et Genitiv, prépositions mixtes et jeu du <strong>Détective d'Articles</strong>.
+          </p>
+        </div>
+        <a href="pages/declinaisons.html" class="mt-6 inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-indigo-600 hover:text-white font-bold text-xs text-slate-700 transition">
+          <span>Explorer les Cas</span>
+          <span>➔</span>
+        </a>
+      </div>
+
+      <!-- Card 2: Déclinaison des Adjectifs -->
+      <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-xl hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-12 h-12 rounded-xl bg-violet-100 text-violet-700 flex items-center justify-center text-2xl font-black group-hover:scale-110 transition">
+              🎨
+            </span>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-violet-50 text-violet-700 border border-violet-200">
+              Simulateur
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition">
+            Déclinaisons des Adjectifs
+          </h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Les 3 types de déclinaisons (-e, -en, -er, -es, -em) avec simulateur en direct et quiz d'entraînement.
+          </p>
+        </div>
+        <a href="pages/adjectifs-declinaisons.html" class="mt-6 inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-indigo-600 hover:text-white font-bold text-xs text-slate-700 transition">
+          <span>Ouvrir le Simulateur</span>
+          <span>➔</span>
+        </a>
+      </div>
+
+      <!-- Card 3: Conjugaison & Verbes -->
+      <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-xl hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl font-black group-hover:scale-110 transition">
+              🔄
+            </span>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+              Audio Inclus
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition">
+            Conjugateur & Verbes
+          </h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Conjuguez 50+ verbes à tous les temps (Präsens, Präteritum, Perfekt, Konjunktiv II) avec synthèse vocale.
+          </p>
+        </div>
+        <a href="pages/conjugaison.html" class="mt-6 inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-indigo-600 hover:text-white font-bold text-xs text-slate-700 transition">
+          <span>Conjuguer un Verbe</span>
+          <span>➔</span>
+        </a>
+      </div>
+
+      <!-- Card 4: Dialogues & Situations -->
+      <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-xl hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-2xl font-black group-hover:scale-110 transition">
+              💬
+            </span>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-teal-50 text-teal-700 border border-teal-200">
+              Mode Rôle Joueur
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition">
+            Dialogues de la Vie Réelle
+          </h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Conversations au restaurant, à la gare, chez le médecin et en entretien avec répliques masquées.
+          </p>
+        </div>
+        <a href="pages/dialogues.html" class="mt-6 inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-indigo-600 hover:text-white font-bold text-xs text-slate-700 transition">
+          <span>Pratiquer les Dialogues</span>
+          <span>➔</span>
+        </a>
+      </div>
+
+      <!-- Card 5: Vocabulaire & Flashcards -->
+      <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-xl hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl font-black group-hover:scale-110 transition">
+              🗂️
+            </span>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+              Flashcards 3D
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition">
+            Vocabulaire Thématique
+          </h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Cartes 3D par thèmes, exemples en contexte et carnet de vocabulaire personnalisé sauvegardé.
+          </p>
+        </div>
+        <a href="pages/vocabulaire.html" class="mt-6 inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-indigo-600 hover:text-white font-bold text-xs text-slate-700 transition">
+          <span>Mémoriser le Vocabulaire</span>
+          <span>➔</span>
+        </a>
+      </div>
+
+      <!-- Card 6: Dictée Audio & Écoute -->
+      <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-xl hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-12 h-12 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center text-2xl font-black group-hover:scale-110 transition">
+              🎧
+            </span>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-rose-50 text-rose-700 border border-rose-200">
+              Écoute
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition">
+            Dictée & Écoute Audio
+          </h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Écoutez des phrases natives avec vitesse réglable (0.75x, 0.9x, 1.1x) et testez votre orthographe.
+          </p>
+        </div>
+        <a href="pages/ecoute-dictee.html" class="mt-6 inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-indigo-600 hover:text-white font-bold text-xs text-slate-700 transition">
+          <span>Faire une Dictée</span>
+          <span>➔</span>
+        </a>
+      </div>
+
+      <!-- Card 7: Exercices & Satzbau -->
+      <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-xl hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl font-black group-hover:scale-110 transition">
+              🎯
+            </span>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-purple-50 text-purple-700 border border-purple-200">
+              Quiz & Phrases
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition">
+            Quiz & Satzbau Builder
+          </h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Testez vos connaissances en grammaire et assemblez des phrases respectant l'ordre V2 et subordonnées.
+          </p>
+        </div>
+        <a href="pages/exercices.html" class="mt-6 inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-indigo-600 hover:text-white font-bold text-xs text-slate-700 transition">
+          <span>Lancer les Quiz</span>
+          <span>➔</span>
+        </a>
+      </div>
+
+      <!-- Card 8: Convertisseur & Ressources -->
+      <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-xl hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center text-2xl font-black group-hover:scale-110 transition">
+              🛠️
+            </span>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-cyan-50 text-cyan-700 border border-cyan-200">
+              Boîte à Outils
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition">
+            Convertisseur & Liens
+          </h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Convertisseur de nombres en lettres avec audio, phonétique des sons allemands et dictionnaires.
+          </p>
+        </div>
+        <a href="pages/ressources.html" class="mt-6 inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-indigo-600 hover:text-white font-bold text-xs text-slate-700 transition">
+          <span>Utiliser les Outils</span>
+          <span>➔</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- Essential Cheat Sheet Summary              -->
+    <!-- ========================================== -->
+    <section class="mt-16 bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+        <div>
+          <span class="text-xs font-black uppercase tracking-wider text-indigo-600">Aide-Mémoire Express</span>
+          <h3 class="text-2xl font-black text-slate-900 mt-1">Tableau Synthétique des Déclinaisons (Articles Définis)</h3>
+        </div>
+        <a href="pages/declinaisons.html" class="text-sm font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1">
+          Voir toutes les tables complètes ➔
+        </a>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm border-collapse">
+          <thead>
+            <tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
+              <th class="p-3">Cas</th>
+              <th class="p-3">Fonction principale</th>
+              <th class="p-3 text-blue-700">Masculin (der)</th>
+              <th class="p-3 text-rose-700">Féminin (die)</th>
+              <th class="p-3 text-emerald-700">Neutre (das)</th>
+              <th class="p-3 text-amber-700">Pluriel (die)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 font-medium">
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-bold text-indigo-700">Nominativ</td>
+              <td class="p-3 text-xs text-slate-500">Sujet / Attribut (Wer?)</td>
+              <td class="p-3 font-bold text-blue-600">der</td>
+              <td class="p-3 font-bold text-rose-600">die</td>
+              <td class="p-3 font-bold text-emerald-600">das</td>
+              <td class="p-3 font-bold text-amber-600">die</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-bold text-orange-700">Akkusativ</td>
+              <td class="p-3 text-xs text-slate-500">COD / Mouvement (Wen? Wohin?)</td>
+              <td class="p-3 font-bold text-blue-600 bg-orange-50 rounded">den</td>
+              <td class="p-3 font-bold text-rose-600">die</td>
+              <td class="p-3 font-bold text-emerald-600">das</td>
+              <td class="p-3 font-bold text-amber-600">die</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-bold text-teal-700">Dativ</td>
+              <td class="p-3 text-xs text-slate-500">COI / Position statique (Wem? Wo?)</td>
+              <td class="p-3 font-bold text-blue-600 bg-teal-50 rounded">dem</td>
+              <td class="p-3 font-bold text-rose-600 bg-teal-50 rounded">der</td>
+              <td class="p-3 font-bold text-emerald-600 bg-teal-50 rounded">dem</td>
+              <td class="p-3 font-bold text-amber-600 bg-teal-50 rounded">den (+n)</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="p-3 font-bold text-purple-700">Genitiv</td>
+              <td class="p-3 text-xs text-slate-500">Possession / Complément du nom (Wessen?)</td>
+              <td class="p-3 font-bold text-blue-600">des (+es)</td>
+              <td class="p-3 font-bold text-rose-600">der</td>
+              <td class="p-3 font-bold text-emerald-600">des (+es)</td>
+              <td class="p-3 font-bold text-amber-600">der</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- Footer                                     -->
+  <!-- ========================================== -->
+  <footer class="bg-slate-900 text-white border-t border-slate-800 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🇩🇪</span>
+            <span class="font-black text-lg text-white">Deutsch<span class="text-indigo-400">TOOLS</span></span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Boîte à outils open-source moderne pour apprendre, réviser et perfectionner votre allemand en toute simplicité.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Grammaire & Déclinaisons</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="pages/declinaisons.html" class="hover:text-white transition">Les 4 Cas Allemands</a></li>
+            <li><a href="pages/adjectifs-declinaisons.html" class="hover:text-white transition">Déclinaisons des Adjectifs</a></li>
+            <li><a href="pages/declinaisons.html#wechsel" class="hover:text-white transition">Wechselpräpositionen</a></li>
+            <li><a href="pages/grammaire.html#tekamolo" class="hover:text-white transition">Règle TeKaMoLo</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Pratique & Audio</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="pages/conjugaison.html" class="hover:text-white transition">Conjugateur de Verbes</a></li>
+            <li><a href="pages/vocabulaire.html" class="hover:text-white transition">Flashcards 3D</a></li>
+            <li><a href="pages/dialogues.html" class="hover:text-white transition">Dialogues de la Vie Réelle</a></li>
+            <li><a href="pages/ecoute-dictee.html" class="hover:text-white transition">Dictée & Écoute Audio</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Exercices & Utilitaires</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="pages/exercices.html" class="hover:text-white transition">Quiz & Satzbau Builder</a></li>
+            <li><a href="pages/ressources.html#number-converter" class="hover:text-white transition">Chiffres en Lettres</a></li>
+            <li><a href="pages/ressources.html#phonetics" class="hover:text-white transition">Phonétique & Sons</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+        <p>© 2026 Learn Deutsch TOOLS — Développé avec passion pour l'apprentissage des langues.</p>
+        <p class="mt-2 sm:mt-0">Viel Erfolg beim Deutschlernen! 🚀</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
 </body>
 </html>

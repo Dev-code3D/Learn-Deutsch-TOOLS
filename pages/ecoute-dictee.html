@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compréhension Orale & Dictée Allemande — Learn Deutsch TOOLS</title>
+  <meta name="description" content="Entraînez votre oreille et votre orthographe allemande avec nos dictées audio interactives à vitesse réglable.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/custom.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <a href="../index.html" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-700 to-purple-600 flex items-center justify-center text-white font-black text-xl shadow-md group-hover:scale-105 transition">
+            🇩🇪
+          </div>
+          <div>
+            <div class="font-extrabold text-slate-900 text-lg tracking-tight group-hover:text-indigo-600 transition">
+              Deutsch<span class="text-indigo-600">TOOLS</span>
+            </div>
+            <p class="text-[10px] text-slate-400 font-semibold tracking-wider uppercase">Apprendre l'allemand</p>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+          <a href="../index.html" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Accueil</a>
+          <a href="declinaisons.html" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Les Cas</a>
+          <a href="adjectifs-declinaisons.html" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Adjectifs</a>
+          <a href="conjugaison.html" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Conjugaison</a>
+          <a href="vocabulaire.html" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Vocabulaire</a>
+          <a href="dialogues.html" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Dialogues</a>
+          <a href="ecoute-dictee.html" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-indigo-600 bg-indigo-50 transition">Dictée Audio</a>
+          <a href="exercices.html" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Exercices</a>
+          <a href="grammaire.html" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Grammaire</a>
+          <a href="ressources.html" class="nav-link px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Ressources</a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <div class="hidden sm:flex items-center gap-2 bg-slate-100 border border-slate-200/80 rounded-xl px-2.5 py-1 text-xs font-bold text-slate-700">
+            <span class="flex items-center gap-1 text-amber-600">🔥 <span class="user-streak-count">1 j</span></span>
+            <span class="text-slate-300">|</span>
+            <span class="flex items-center gap-1 text-indigo-600">⚡ <span class="user-xp-count">45 XP</span></span>
+          </div>
+
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-5 space-y-2">
+      <a href="../index.html" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">🏠 Accueil</a>
+      <a href="declinaisons.html" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">📖 Les 4 Cas & Prépositions</a>
+      <a href="adjectifs-declinaisons.html" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">🎨 Déclinaisons des Adjectifs</a>
+      <a href="conjugaison.html" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">🔄 Conjugateur & Verbes</a>
+      <a href="vocabulaire.html" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">🗂️ Flashcards & Vocabulaire</a>
+      <a href="dialogues.html" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">💬 Dialogues & Situations</a>
+      <a href="ecoute-dictee.html" class="block px-3 py-2 rounded-lg text-base font-bold text-indigo-600 bg-indigo-50">🎧 Dictée Audio & Écoute</a>
+      <a href="exercices.html" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">🎯 Exercices & Satzbau</a>
+      <a href="grammaire.html" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">📚 Guide Grammatical</a>
+      <a href="ressources.html" class="block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">🛠️ Outils & Ressources</a>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="bg-gradient-to-r from-violet-950 via-slate-900 to-indigo-950 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/20 border border-violet-400/30 text-violet-300 text-xs font-bold mb-3">
+        <span>🎧 Compréhension Orale & Orthographe</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-black tracking-tight">Dictée Allemande & Entraînement à l'Écoute</h1>
+      <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
+        Aiguisez votre compréhension orale avec des extraits audio à vitesse adaptable (0.75x, 0.9x, 1.1x) et perfectionnez votre orthographe allemande.
+      </p>
+    </div>
+  </section>
+
+  <main class="flex-1 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+    <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+      <div id="dictation-area">
+        <!-- Rendered via js/dictee.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-slate-900 text-white border-t border-slate-800 mt-16 py-8 text-center text-xs text-slate-400">
+    <p>© 2026 Learn Deutsch TOOLS — Compréhension Orale & Dictée Allemande.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/dictee.js"></script>
+</body>
+</html>
