@@ -65,12 +65,12 @@
             </span>
           </div>
 
-          <!-- Quick Search Button -->
+          <!-- Quick Search Bar with Instant Results -->
           <div class="relative">
-            <input type="text" id="global-search-input" placeholder="Chercher un outil, job, DAAD, verbe... (ex: dativ)" 
-                   class="hidden lg:block w-56 pl-8 pr-3 py-1.5 text-xs bg-slate-100 hover:bg-slate-200/70 focus:bg-white focus:w-64 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+            <input type="text" placeholder="Rechercher (ex: dativ, cv, daad...)" 
+                   class="site-search-input hidden lg:block w-48 sm:w-56 pl-8 pr-3 py-1.5 text-xs bg-slate-100 hover:bg-slate-200/70 focus:bg-white focus:w-64 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
             <span class="hidden lg:block absolute left-2.5 top-2 text-slate-400 text-xs">🔍</span>
-            <div id="global-search-results" class="hidden absolute right-0 mt-2 w-80 max-h-96 overflow-y-auto bg-white border border-slate-200 shadow-2xl rounded-xl p-2 z-50"></div>
+            <div class="site-search-results hidden absolute right-0 mt-2 w-80 max-h-96 overflow-y-auto bg-white border border-slate-200 shadow-2xl rounded-xl p-2 z-50"></div>
           </div>
 
           <button id="mobile-menu-btn" class="2xl:hidden p-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition" aria-label="Menu">
@@ -83,6 +83,15 @@
 
     <!-- Mobile Drawer Menu -->
     <div id="mobile-menu" class="hidden 2xl:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-5 space-y-1">
+      
+      <!-- Mobile Search Input -->
+      <div class="relative py-2">
+        <input type="text" placeholder="🔍 Rechercher (ex: dativ, verbes, job...)" 
+               class="site-search-input w-full pl-8 pr-3 py-2 text-xs bg-slate-100 focus:bg-white border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500">
+        <span class="absolute left-2.5 top-4 text-slate-400 text-xs">🔍</span>
+        <div class="site-search-results hidden mt-1 w-full bg-white border border-slate-200 shadow-xl rounded-xl p-2 z-50"></div>
+      </div>
+
       <a href="index.html" class="block px-3 py-2 rounded-lg text-sm font-bold text-indigo-600 bg-indigo-50">🏠 Accueil</a>
       <a href="pages/declinaisons.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">📖 Les 4 Cas & Prépositions</a>
       <a href="pages/adjectifs-declinaisons.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🎨 Déclinaisons des Adjectifs</a>

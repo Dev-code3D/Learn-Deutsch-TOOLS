@@ -1,6 +1,6 @@
 /**
  * Learn Deutsch TOOLS - Core Engine (main.js)
- * Provides speech synthesis (TTS), streak & XP tracking, mobile nav, search, and toast alerts.
+ * Provides speech synthesis (TTS), streak & XP tracking, mobile nav, enhanced multi-keyword search, and toast alerts.
  */
 
 // ==========================================
@@ -214,7 +214,7 @@ function initDailyWord() {
 }
 
 // ==========================================
-// 5. Global Search / Navigation Init
+// 5. Global Search & Navigation
 // ==========================================
 function initNavbar() {
   const toggleBtn = document.getElementById('mobile-menu-btn');
@@ -231,94 +231,173 @@ function initNavbar() {
   document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
     if (href && (currentPath.endsWith(href) || (currentPath.endsWith('/') && href.includes('index.html')))) {
-      link.classList.add('text-indigo-600', 'font-bold');
+      link.classList.add('text-indigo-600', 'font-bold', 'bg-indigo-50');
       link.classList.remove('text-slate-600');
     }
   });
 }
 
-// Comprehensive Global Quick Finder
+// Ultra-Comprehensive Global Index with keywords, tags and descriptions
 const SITE_INDEX = [
-  { title: "Les 4 Cas Allemands (Nominativ, Akkusativ, Dativ, Genitiv)", url: "pages/declinaisons.html", cat: "Grammaire" },
-  { title: "Prépositions Mixtes (Wechselpräpositionen - Statique vs Mouvement)", url: "pages/declinaisons.html#wechsel", cat: "Grammaire" },
-  { title: "Détective d'Articles (Jeu Der / Die / Das)", url: "pages/declinaisons.html#detective", cat: "Jeu" },
-  { title: "Déclinaison des Adjectifs (-e, -en, -er, -es, -em)", url: "pages/adjectifs-declinaisons.html", cat: "Adjectifs" },
-  { title: "Simulateur d'accords d'adjectifs en direct", url: "pages/adjectifs-declinaisons.html", cat: "Outil" },
-  { title: "Étudier en Allemagne (DAAD, TestDaF, DSH, Bourses, WG-Gesucht)", url: "pages/etudes-allemagne.html", cat: "Études" },
-  { title: "Jobs & Carrière en Allemagne (Werkstudent, Minijob 538€, Lebenslauf)", url: "pages/carrieres-jobs.html", cat: "Emploi" },
-  { title: "Modèle de CV Allemand (Lebenslauf tabellarisch à copier)", url: "pages/carrieres-jobs.html", cat: "Emploi" },
-  { title: "Presse, Médias & Actualités en Allemand Facile (Nachrichtenleicht)", url: "pages/medias-livres.html", cat: "Presse" },
-  { title: "Livres & Romans Gradués en Allemand (A1 à B2)", url: "pages/medias-livres.html", cat: "Livres" },
-  { title: "Livres Audio Allemands Gratuits (ARD Audiothek, Vorleser.net)", url: "pages/medias-livres.html", cat: "Audio" },
-  { title: "Dialogues de la vie réelle (Restaurant, Gare, Médecin, Entretien)", url: "pages/dialogues.html", cat: "Dialogues" },
-  { title: "Mode Rôle Joueur pour Conversations Allemandes", url: "pages/dialogues.html", cat: "Pratique" },
-  { title: "Dictée Allemande & Compréhension Orale (Audio)", url: "pages/ecoute-dictee.html", cat: "Audio" },
-  { title: "Conjugateur de Verbes Allemands (50+ Verbes & Temps)", url: "pages/conjugaison.html", cat: "Outil" },
-  { title: "Liste des Verbes Irréguliers et Forts (A1-B2)", url: "pages/conjugaison.html#starke-verben", cat: "Conjugaison" },
-  { title: "Verbes à Particules Séparables (trennbare Verben)", url: "pages/conjugaison.html#trennbare", cat: "Conjugaison" },
-  { title: "Flashcards Vocabulaire par Thèmes (3D)", url: "pages/vocabulaire.html", cat: "Vocabulaire" },
-  { title: "Carnet de Vocabulaire Personnalisé avec Export/Import JSON", url: "pages/vocabulaire.html#custom-list", cat: "Vocabulaire" },
-  { title: "Quiz & Exercices Interactifs avec Score", url: "pages/exercices.html", cat: "Exercices" },
-  { title: "Constructeur de Phrases (Satzbau & Règle du Verbe en 2ème)", url: "pages/exercices.html#satzbau", cat: "Exercices" },
-  { title: "L'Ordre des Mots dans la Phrase (Règle TeKaMoLo)", url: "pages/grammaire.html#tekamolo", cat: "Grammaire" },
-  { title: "Subordonnées & Conjonctions (weil, dass, wenn, obwohl)", url: "pages/grammaire.html#neben", cat: "Grammaire" },
-  { title: "Convertisseur de Nombres en Lettres Allemandes", url: "pages/ressources.html#number-converter", cat: "Outil" },
-  { title: "Podcasts & Chaînes YouTube recommandées", url: "pages/ressources.html#podcasts", cat: "Ressources" },
-  { title: "Mots Directionnels (rein, raus, rauf, runter, rüber)", url: "pages/grammaire.html#directions", cat: "Grammaire" }
+  // 1. Grammaire & Cas
+  { title: "Les 4 Cas Allemands (Nominativ, Akkusativ, Dativ, Genitiv)", desc: "Tableaux des articles définis, indéfinis, pronoms personnels et règles", url: "pages/declinaisons.html", cat: "Cas & Déclinaisons", keywords: ["nominatif", "accusatif", "datif", "génitif", "wer", "wen", "wem", "wessen", "der", "die", "das", "den", "dem", "des", "ein", "eine", "einen", "einem", "eines"] },
+  { title: "Wechselpräpositionen (Prépositions Mixtes Statique vs Mouvement)", desc: "Les 9 prépositions : an, auf, hinter, in, neben, über, unter, vor, zwischen", url: "pages/declinaisons.html#wechsel", cat: "Prépositions", keywords: ["wo", "wohin", "statique", "mouvement", "an", "auf", "in", "unter", "über", "vor", "hinter", "neben", "zwischen"] },
+  { title: "Détective d'Articles (Jeu interactif Der, Die, Das)", desc: "Devinez le genre des noms allemands avec astuces mnémoniques (-ung, -heit, -ling...)", url: "pages/declinaisons.html#detective", cat: "Jeu Interactif", keywords: ["jeu", "quiz", "genre", "masculin", "feminin", "neutre", "suffixes"] },
+  
+  // 2. Adjectifs
+  { title: "Déclinaison des Adjectifs (-e, -en, -er, -es, -em)", desc: "Les 3 types d'accords : déclinaison faible, mixte et forte (sans article)", url: "pages/adjectifs-declinaisons.html", cat: "Adjectifs", keywords: ["adjectifs", "terminaisons", "faible", "mixte", "forte", "nullartikel", "schön", "gut", "alt", "neu"] },
+  { title: "Simulateur d'accords d'adjectifs en temps réel", desc: "Testez n'importe quelle combinaison de genre, cas et article avec audio", url: "pages/adjectifs-declinaisons.html#simulator", cat: "Simulateur", keywords: ["simulateur", "accord", "adjectif", "live", "audio"] },
+
+  // 3. Verbes & Conjugaison
+  { title: "Conjugateur de Verbes Allemands (50+ Verbes & Temps)", desc: "Présent, Prétérit, Perfekt (haben/sein), Konjunktiv II, Impératif avec audio", url: "pages/conjugaison.html", cat: "Conjugaison", keywords: ["verbe", "conjuguer", "sein", "haben", "werden", "können", "müssen", "wollen", "gehen", "sprechen", "fahren", "temps", "präsens", "präteritum", "perfekt"] },
+  { title: "Tableau des Verbes Irréguliers et Forts (A1 - B2)", desc: "Les 3 formes : Infinitif, Präteritum, Partizip II", url: "pages/conjugaison.html#starke-verben", cat: "Verbes Forts", keywords: ["starke verben", "irréguliers", "partizip 2", "participe passé", "tableau"] },
+  { title: "Verbes à Particules Séparables vs Inséparables", desc: "Règles des préfixes (be-, ge-, er-, ver-, zer- vs ab-, an-, auf-, mit-)", url: "pages/conjugaison.html#trennbare", cat: "Grammaire", keywords: ["trennbare", "séparables", "inséparables", "prefixes", "aufstehen", "verstehen"] },
+
+  // 4. Vocabulaire & Flashcards
+  { title: "Flashcards 3D & Vocabulaire Thématique (A1 à B2+)", desc: "11 thématiques : Maison, Travail, Voyage, Santé, Économie, Tech, Climat, Connecteurs", url: "pages/vocabulaire.html", cat: "Vocabulaire", keywords: ["flashcards", "cartes", "mémorisation", "vocabulaire", "a1", "a2", "b1", "b2", "mots", "audio"] },
+  { title: "Carnet de Vocabulaire Personnel (Export & Import JSON)", desc: "Enregistrez vos propres mots découverts avec sauvegarde locale", url: "pages/vocabulaire.html#custom-list", cat: "Espace Perso", keywords: ["carnet", "ajouter", "mots", "export", "import", "sauvegarde", "json"] },
+
+  // 5. Études en Allemagne
+  { title: "Étudier en Allemagne : DAAD, Universités & Bourses", desc: "Guide officiel : universités gratuites, visa de 18 mois, bourses Deutschlandstipendium", url: "pages/etudes-allemagne.html", cat: "Études en Allemagne", keywords: ["études", "université", "daad", "uni-assist", "bourses", "hochschule", "bachelor", "master", "visa", "gratuit"] },
+  { title: "Certifications de Langue pour l'Université (TestDaF, DSH, telc, Goethe)", desc: "Niveaux requis B2/C1 pour intégrer une université allemande", url: "pages/etudes-allemagne.html", cat: "Certifications", keywords: ["testdaf", "dsh", "telc c1", "goethe c1", "examen", "certificat", "diplome"] },
+  { title: "Logement Étudiant & Colocation (WG-Gesucht & Studierendenwerk)", desc: "Comment trouver une chambre en WG (Wohngemeinschaft) en Allemagne", url: "pages/etudes-allemagne.html", cat: "Logement", keywords: ["logement", "colocation", "wg", "wg-gesucht", "chambre", "studierendenwerk"] },
+
+  // 6. Carrière & Jobs
+  { title: "Jobs Étudiants : Contrat Werkstudent & Minijob (538€)", desc: "Travailler jusqu'à 20h/semaine avec cotisations allégées et salaire avantageux", url: "pages/carrieres-jobs.html", cat: "Jobs & Carrière", keywords: ["job", "étudiant", "werkstudent", "minijob", "538", "travail", "salaire", "stage", "praktikum"] },
+  { title: "Modèle de CV Allemand (Lebenslauf tabellarisch à copier)", desc: "Structure type d'un CV allemand avec compétences linguistiques et informatiques", url: "pages/carrieres-jobs.html", cat: "Modèle CV", keywords: ["cv", "lebenslauf", "lettre de motivation", "anschreiben", "candidature", "bewerbung"] },
+  { title: "Portails d'Emploi en Allemagne (StepStone, Jobmensa, Xing, LinkedIn)", desc: "Sites d'annonces d'emploi et de recrutement en Allemagne", url: "pages/carrieres-jobs.html", cat: "Recrutement", keywords: ["stepstone", "jobmensa", "zenjob", "xing", "linkedin", "arbeitsagentur", "indeed", "offres"] },
+
+  // 7. Presse, Médias & Livres
+  { title: "Actualités en Allemand Facile (Nachrichtenleicht & Logo ZDF)", desc: "Journaux audio et écrits avec vocabulaire simplifié pour progresser (A2-B1)", url: "pages/medias-livres.html", cat: "Presse Facile", keywords: ["nachrichtenleicht", "dlf", "dw", "deutsche welle", "logo", "zdf", "facile", "audio"] },
+  { title: "Livres & Romans Gradués en Allemand (A1 à B2)", desc: "André Klein, Olly Richards, Tschick, Momo, Die Verwandlung, Der Vorleser", url: "pages/medias-livres.html", cat: "Livres", keywords: ["livres", "romans", "lecture", "dino lernt deutsch", "tschick", "momo", "kafka"] },
+  { title: "Livres Audio Allemands Gratuits & Légaux (ARD Audiothek & Vorleser.net)", desc: "Plus de 800 œuvres et fictions audio gratuites en allemand", url: "pages/medias-livres.html", cat: "Livres Audio", keywords: ["audiobooks", "hörbücher", "ard audiothek", "vorleser", "librivox", "ohrka", "gratuit"] },
+
+  // 8. Dialogues & Situations Réelles
+  { title: "Dialogues Réels : Restaurant, Gare, Médecin, Entretien d'Embauche", desc: "Conversations bilingues avec audio natif et mode rôle joueur", url: "pages/dialogues.html", cat: "Dialogues", keywords: ["dialogues", "conversations", "restaurant", "gare", "médecin", "entretien", "oral", "parler"] },
+
+  // 9. Dictée & Écoute
+  { title: "Dictée Allemande Interactive avec Vitesse Réglable", desc: "Écoute ralentie (0.75x, 0.9x), clavier spécial (ä, ö, ü, ß) et correction immédiate", url: "pages/ecoute-dictee.html", cat: "Compréhension Orale", keywords: ["dictée", "écoute", "orthographe", "audio", "vitesse", "caracteres speciaux"] },
+
+  // 10. Exercices & Syntaxe
+  { title: "Quiz de Grammaire & Cas Allemands", desc: "Évaluation rapide avec explications détaillées de chaque règle en français", url: "pages/exercices.html", cat: "Quiz", keywords: ["quiz", "exercices", "qcm", "test", "evaluation", "score", "xp"] },
+  { title: "Constructeur de Phrases Satzbau (Ordre des Mots & Verbe en V2)", desc: "Reconstituez des phrases principales et subordonnées avec le verbe à la bonne place", url: "pages/exercices.html#satzbau", cat: "Syntaxe", keywords: ["satzbau", "ordre des mots", "v2", "verbe en 2eme", "syntaxe", "phrase"] },
+
+  // 11. Fiches Grammaire
+  { title: "Règle TeKaMoLo : L'Ordre des Compléments dans la Phrase", desc: "Temporal ➔ Kausal ➔ Modal ➔ Lokal expliqué avec exemples clairs", url: "pages/grammaire.html#tekamolo", cat: "Guide Grammatical", keywords: ["tekamolo", "ordre", "temporal", "kausal", "modal", "lokal", "syntaxe"] },
+  { title: "Subordonnées (weil, dass, wenn) vs Conjonctions ADUSO (Position 0)", desc: "Règles pour le verbe à la fin vs Aber, Denn, Und, Sondern, Oder", url: "pages/grammaire.html#neben", cat: "Guide Grammatical", keywords: ["subordonnées", "aduso", "weil", "dass", "wenn", "obwohl", "aber", "denn", "und", "sondern", "oder"] },
+  { title: "Les 6 Verbes Modaux (können, müssen, dürfen, wollen, sollen, möchten)", desc: "Signification, conjugaison et syntaxe avec l'infinitif en fin de phrase", url: "pages/grammaire.html", cat: "Guide Grammatical", keywords: ["modaux", "können", "müssen", "dürfen", "wollen", "sollen", "möchten"] },
+  { title: "Mots Directionnels (rein, raus, rauf, runter, rüber)", desc: "Adverbes oraux de mouvement et de direction", url: "pages/grammaire.html#directions", cat: "Guide Grammatical", keywords: ["directions", "rein", "raus", "rauf", "runter", "rüber"] },
+
+  // 12. Outils & Ressources
+  { title: "Convertisseur de Nombres en Lettres Allemandes (0 à 999 999 999)", desc: "Convertissez instantanément n'importe quel chiffre avec audio de prononciation", url: "pages/ressources.html#number-converter", cat: "Outils", keywords: ["nombres", "chiffres", "lettres", "compter", "eins", "einundzwanzig", "cent", "mille"] },
+  { title: "Guide Phonétique & Sons Allemands (Umlauts Ä, Ö, Ü, ß, ch, sch, ei, eu)", desc: "Prononciation interactive des sons spécifiques de la langue allemande", url: "pages/ressources.html#phonetics", cat: "Phonétique", keywords: ["phonetique", "prononciation", "umlaut", "ä", "ö", "ü", "ß", "sons", "alphabet"] },
+  { title: "Sélection des Meilleurs Dictionnaires & Podcasts (LEO, PONS, Easy German)", desc: "Dictionnaires en ligne recommandés, podcasts d'immersion et chaînes YouTube", url: "pages/ressources.html#podcasts", cat: "Ressources", keywords: ["dictionnaires", "leo", "pons", "duden", "podcasts", "easy german", "slow german", "nicos weg"] }
 ];
 
+function resolveUrlForCurrentPage(itemUrl) {
+  const isSubfolder = window.location.pathname.includes('/pages/');
+  if (!isSubfolder) {
+    return itemUrl;
+  }
+  if (itemUrl.startsWith('pages/')) {
+    return itemUrl.substring(6);
+  }
+  return '../' + itemUrl;
+}
+
 function initSearchModal() {
-  const searchInput = document.getElementById('global-search-input');
-  const searchResults = document.getElementById('global-search-results');
-  if (!searchInput || !searchResults) return;
+  const searchInputs = document.querySelectorAll('.site-search-input, #global-search-input');
+  const searchResultsContainers = document.querySelectorAll('.site-search-results, #global-search-results');
 
-  searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase().trim();
-    if (!query) {
-      searchResults.innerHTML = '';
-      searchResults.classList.add('hidden');
-      return;
-    }
+  if (searchInputs.length === 0) return;
 
-    const isSubfolder = window.location.pathname.includes('/pages/');
+  searchInputs.forEach((input, index) => {
+    const resultsContainer = searchResultsContainers[index] || document.getElementById('global-search-results');
+    if (!resultsContainer) return;
 
-    const matches = SITE_INDEX.filter(item => 
-      item.title.toLowerCase().includes(query) || item.cat.toLowerCase().includes(query)
-    );
+    input.addEventListener('input', (e) => {
+      const rawQuery = e.target.value.trim().toLowerCase();
+      if (!rawQuery) {
+        resultsContainer.innerHTML = '';
+        resultsContainer.classList.add('hidden');
+        return;
+      }
 
-    if (matches.length === 0) {
-      searchResults.innerHTML = `<div class="p-3 text-sm text-slate-500 text-center">Aucun résultat trouvé pour "${query}"</div>`;
-      searchResults.classList.remove('hidden');
-      return;
-    }
+      const queryWords = rawQuery.split(/\s+/);
 
-    searchResults.innerHTML = matches.map(item => {
-      let targetUrl = item.url;
-      if (isSubfolder) {
-        if (targetUrl.startsWith('pages/')) {
-          targetUrl = targetUrl.replace('pages/', '');
-        } else {
-          targetUrl = '../' + targetUrl;
+      const matches = SITE_INDEX.filter(item => {
+        const itemText = (item.title + ' ' + (item.desc || '') + ' ' + item.cat + ' ' + (item.keywords ? item.keywords.join(' ') : '')).toLowerCase();
+        return queryWords.every(w => itemText.includes(w));
+      });
+
+      if (matches.length === 0) {
+        resultsContainer.innerHTML = `
+          <div class="p-4 text-center text-xs text-slate-500">
+            <span class="text-base block mb-1">🔍</span>
+            Aucun résultat pour <strong>"${rawQuery}"</strong>.<br>
+            <span class="text-[11px] text-slate-400">Essayez : <em>dativ, verbes, cv, daad, audio, quiz, werkstudent...</em></span>
+          </div>
+        `;
+        resultsContainer.classList.remove('hidden');
+        return;
+      }
+
+      resultsContainer.innerHTML = `
+        <div class="p-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 flex justify-between">
+          <span>${matches.length} résultat(s) trouvé(s)</span>
+          <span>Appuyez sur Entrée ↵</span>
+        </div>
+        <div class="divide-y divide-slate-100 max-h-80 overflow-y-auto">
+          ${matches.slice(0, 10).map(item => {
+            const finalUrl = resolveUrlForCurrentPage(item.url);
+            return `
+              <a href="${finalUrl}" class="flex flex-col p-2.5 rounded-lg hover:bg-indigo-50/80 transition text-left group">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold text-slate-900 group-hover:text-indigo-600 transition flex items-center gap-1.5">
+                    <span>${item.title}</span>
+                  </span>
+                  <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 group-hover:bg-indigo-100 text-slate-600 group-hover:text-indigo-700 font-bold">${item.cat}</span>
+                </div>
+                ${item.desc ? `<p class="text-[11px] text-slate-500 mt-0.5 line-clamp-1">${item.desc}</p>` : ''}
+              </a>
+            `;
+          }).join('')}
+        </div>
+      `;
+      resultsContainer.classList.remove('hidden');
+    });
+
+    // Handle Enter Key to navigate to first result
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const firstLink = resultsContainer.querySelector('a');
+        if (firstLink) {
+          window.location.href = firstLink.getAttribute('href');
         }
       }
-      return `
-        <a href="${targetUrl}" class="flex items-center justify-between p-3 rounded-lg hover:bg-indigo-50 transition text-sm text-slate-800 font-medium group">
-          <div class="flex items-center gap-2">
-            <span class="text-xs px-2 py-0.5 rounded bg-slate-100 group-hover:bg-indigo-100 text-slate-600 group-hover:text-indigo-700 font-semibold">${item.cat}</span>
-            <span>${item.title}</span>
-          </div>
-          <svg class="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        </a>
-      `;
-    }).join('');
-    searchResults.classList.remove('hidden');
+    });
+  });
+
+  // Global Keyboard Shortcut: Press '/' or 'Cmd+K' / 'Ctrl+K' to open search immediately
+  document.addEventListener('keydown', (e) => {
+    if ((e.key === '/' || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      const firstInput = document.querySelector('.site-search-input, #global-search-input');
+      if (firstInput) {
+        firstInput.focus();
+        firstInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
   });
 
   // Hide search when clicking outside
   document.addEventListener('click', (e) => {
-    if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-      searchResults.classList.add('hidden');
-    }
+    searchInputs.forEach((input, index) => {
+      const container = searchResultsContainers[index] || document.getElementById('global-search-results');
+      if (container && !input.contains(e.target) && !container.contains(e.target)) {
+        container.classList.add('hidden');
+      }
+    });
   });
 }
 

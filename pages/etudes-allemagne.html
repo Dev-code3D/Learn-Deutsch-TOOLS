@@ -52,6 +52,14 @@
             <span class="flex items-center gap-1 text-indigo-600">⚡ <span class="user-xp-count">45 XP</span></span>
           </div>
 
+          <!-- Quick Search Bar -->
+          <div class="relative">
+            <input type="text" placeholder="Rechercher..." 
+                   class="site-search-input hidden lg:block w-40 sm:w-48 pl-8 pr-3 py-1.5 text-xs bg-slate-100 hover:bg-slate-200/70 focus:bg-white focus:w-56 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+            <span class="hidden lg:block absolute left-2.5 top-2 text-slate-400 text-xs">🔍</span>
+            <div class="site-search-results hidden absolute right-0 mt-2 w-80 max-h-96 overflow-y-auto bg-white border border-slate-200 shadow-2xl rounded-xl p-2 z-50"></div>
+          </div>
+
           <button id="mobile-menu-btn" class="2xl:hidden p-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </button>
@@ -62,6 +70,13 @@
 
     <!-- Mobile Drawer Menu -->
     <div id="mobile-menu" class="hidden 2xl:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-5 space-y-1">
+      <div class="relative py-2">
+        <input type="text" placeholder="🔍 Rechercher sur le site..." 
+               class="site-search-input w-full pl-8 pr-3 py-2 text-xs bg-slate-100 focus:bg-white border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500">
+        <span class="absolute left-2.5 top-4 text-slate-400 text-xs">🔍</span>
+        <div class="site-search-results hidden mt-1 w-full bg-white border border-slate-200 shadow-xl rounded-xl p-2 z-50"></div>
+      </div>
+
       <a href="../index.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🏠 Accueil</a>
       <a href="declinaisons.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">📖 Les 4 Cas & Prépositions</a>
       <a href="adjectifs-declinaisons.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🎨 Déclinaisons des Adjectifs</a>
@@ -69,7 +84,7 @@
       <a href="vocabulaire.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🗂️ Flashcards & Vocabulaire</a>
       <a href="dialogues.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">💬 Dialogues & Situations</a>
       <a href="etudes-allemagne.html" class="block px-3 py-2 rounded-lg text-sm font-bold text-indigo-600 bg-indigo-50">🎓 Étudier en Allemagne</a>
-      <a href="carrieres-jobs.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">💼 Jobs & Carrière (Werkstudent)</a>
+      <a href="carrieres-jobs.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">💼 Jobs & Carrière</a>
       <a href="medias-livres.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">📰 Presse, Médias & Livres</a>
       <a href="ecoute-dictee.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🎧 Dictée Audio & Écoute</a>
       <a href="exercices.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🎯 Exercices & Satzbau</a>
