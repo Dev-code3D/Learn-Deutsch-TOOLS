@@ -12,7 +12,6 @@ function initTTS() {
   if ('speechSynthesis' in window) {
     const updateVoices = () => {
       const voices = window.speechSynthesis.getVoices();
-      // Look for a high-quality German voice (de-DE, de-AT, or any de)
       germanVoice = voices.find(v => v.lang === 'de-DE' || v.lang.startsWith('de')) || null;
     };
     updateVoices();
@@ -33,7 +32,7 @@ function speakGerman(text, btnElement = null) {
   const cleanText = text.replace(/^(der|die|das|den|dem|des|ein|eine)\s+/i, '').trim();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'de-DE';
-  utterance.rate = 0.9; // slightly slower for better learner comprehension
+  utterance.rate = 0.9;
   if (germanVoice) utterance.voice = germanVoice;
 
   if (btnElement) {
@@ -159,12 +158,10 @@ function showToast(message, type = 'info') {
 
   container.appendChild(toast);
 
-  // Trigger animation
   requestAnimationFrame(() => {
     toast.classList.remove('translate-y-4', 'opacity-0');
   });
 
-  // Auto remove after 3s
   setTimeout(() => {
     toast.classList.add('opacity-0', 'translate-y-2');
     setTimeout(() => toast.remove(), 300);
@@ -247,14 +244,20 @@ const SITE_INDEX = [
   { title: "Détective d'Articles (Jeu Der / Die / Das)", url: "pages/declinaisons.html#detective", cat: "Jeu" },
   { title: "Déclinaison des Adjectifs (-e, -en, -er, -es, -em)", url: "pages/adjectifs-declinaisons.html", cat: "Adjectifs" },
   { title: "Simulateur d'accords d'adjectifs en direct", url: "pages/adjectifs-declinaisons.html", cat: "Outil" },
-  { title: "Dialogues de la vie réelle (Restaurant, Gare, Médecin)", url: "pages/dialogues.html", cat: "Dialogues" },
+  { title: "Étudier en Allemagne (DAAD, TestDaF, DSH, Bourses, WG-Gesucht)", url: "pages/etudes-allemagne.html", cat: "Études" },
+  { title: "Jobs & Carrière en Allemagne (Werkstudent, Minijob 538€, Lebenslauf)", url: "pages/carrieres-jobs.html", cat: "Emploi" },
+  { title: "Modèle de CV Allemand (Lebenslauf tabellarisch à copier)", url: "pages/carrieres-jobs.html", cat: "Emploi" },
+  { title: "Presse, Médias & Actualités en Allemand Facile (Nachrichtenleicht)", url: "pages/medias-livres.html", cat: "Presse" },
+  { title: "Livres & Romans Gradués en Allemand (A1 à B2)", url: "pages/medias-livres.html", cat: "Livres" },
+  { title: "Livres Audio Allemands Gratuits (ARD Audiothek, Vorleser.net)", url: "pages/medias-livres.html", cat: "Audio" },
+  { title: "Dialogues de la vie réelle (Restaurant, Gare, Médecin, Entretien)", url: "pages/dialogues.html", cat: "Dialogues" },
   { title: "Mode Rôle Joueur pour Conversations Allemandes", url: "pages/dialogues.html", cat: "Pratique" },
   { title: "Dictée Allemande & Compréhension Orale (Audio)", url: "pages/ecoute-dictee.html", cat: "Audio" },
   { title: "Conjugateur de Verbes Allemands (50+ Verbes & Temps)", url: "pages/conjugaison.html", cat: "Outil" },
   { title: "Liste des Verbes Irréguliers et Forts (A1-B2)", url: "pages/conjugaison.html#starke-verben", cat: "Conjugaison" },
   { title: "Verbes à Particules Séparables (trennbare Verben)", url: "pages/conjugaison.html#trennbare", cat: "Conjugaison" },
   { title: "Flashcards Vocabulaire par Thèmes (3D)", url: "pages/vocabulaire.html", cat: "Vocabulaire" },
-  { title: "Carnet de Vocabulaire Personnalisé", url: "pages/vocabulaire.html#custom-list", cat: "Vocabulaire" },
+  { title: "Carnet de Vocabulaire Personnalisé avec Export/Import JSON", url: "pages/vocabulaire.html#custom-list", cat: "Vocabulaire" },
   { title: "Quiz & Exercices Interactifs avec Score", url: "pages/exercices.html", cat: "Exercices" },
   { title: "Constructeur de Phrases (Satzbau & Règle du Verbe en 2ème)", url: "pages/exercices.html#satzbau", cat: "Exercices" },
   { title: "L'Ordre des Mots dans la Phrase (Règle TeKaMoLo)", url: "pages/grammaire.html#tekamolo", cat: "Grammaire" },
@@ -319,7 +322,6 @@ function initSearchModal() {
   });
 }
 
-// Initialise everything when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   initTTS();
   UserProgress.updateUI();

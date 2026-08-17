@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presse, Médias & Livres en Allemand — Learn Deutsch TOOLS</title>
+  <meta name="description" content="Sélection des meilleurs journaux allemands, actualités en allemand facile, livres gradués (A1 à B2) et livres audio gratuits pour progresser par l'immersion.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/custom.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <a href="../index.html" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-700 to-purple-600 flex items-center justify-center text-white font-black text-xl shadow-md group-hover:scale-105 transition">
+            🇩🇪
+          </div>
+          <div>
+            <div class="font-extrabold text-slate-900 text-lg tracking-tight group-hover:text-indigo-600 transition">
+              Deutsch<span class="text-indigo-600">TOOLS</span>
+            </div>
+            <p class="text-[10px] text-slate-400 font-semibold tracking-wider uppercase">Apprendre l'allemand</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden 2xl:flex items-center gap-1">
+          <a href="../index.html" class="nav-link px-2 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Accueil</a>
+          <a href="declinaisons.html" class="nav-link px-2 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Les Cas</a>
+          <a href="adjectifs-declinaisons.html" class="nav-link px-2 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Adjectifs</a>
+          <a href="conjugaison.html" class="nav-link px-2 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Conjugaison</a>
+          <a href="vocabulaire.html" class="nav-link px-2 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Vocabulaire</a>
+          <a href="dialogues.html" class="nav-link px-2 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Dialogues</a>
+          <a href="etudes-allemagne.html" class="nav-link px-2 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Études en Allemagne</a>
+          <a href="carrieres-jobs.html" class="nav-link px-2 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Jobs & Carrière</a>
+          <a href="medias-livres.html" class="nav-link px-2 py-1.5 rounded-lg text-xs font-bold text-indigo-600 bg-indigo-50 transition">Presse & Livres</a>
+          <a href="exercices.html" class="nav-link px-2 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Exercices</a>
+          <a href="grammaire.html" class="nav-link px-2 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Grammaire</a>
+          <a href="ressources.html" class="nav-link px-2 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition">Ressources</a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <div class="hidden sm:flex items-center gap-2 bg-slate-100 border border-slate-200/80 rounded-xl px-2.5 py-1 text-xs font-bold text-slate-700">
+            <span class="flex items-center gap-1 text-amber-600">🔥 <span class="user-streak-count">1 j</span></span>
+            <span class="text-slate-300">|</span>
+            <span class="flex items-center gap-1 text-indigo-600">⚡ <span class="user-xp-count">45 XP</span></span>
+          </div>
+
+          <button id="mobile-menu-btn" class="2xl:hidden p-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden 2xl:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-5 space-y-1">
+      <a href="../index.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🏠 Accueil</a>
+      <a href="declinaisons.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">📖 Les 4 Cas & Prépositions</a>
+      <a href="adjectifs-declinaisons.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🎨 Déclinaisons des Adjectifs</a>
+      <a href="conjugaison.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🔄 Conjugateur & Verbes</a>
+      <a href="vocabulaire.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🗂️ Flashcards & Vocabulaire</a>
+      <a href="dialogues.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">💬 Dialogues & Situations</a>
+      <a href="etudes-allemagne.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🎓 Étudier en Allemagne</a>
+      <a href="carrieres-jobs.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">💼 Jobs & Carrière</a>
+      <a href="medias-livres.html" class="block px-3 py-2 rounded-lg text-sm font-bold text-indigo-600 bg-indigo-50">📰 Presse, Médias & Livres</a>
+      <a href="ecoute-dictee.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🎧 Dictée Audio & Écoute</a>
+      <a href="exercices.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🎯 Exercices & Satzbau</a>
+      <a href="grammaire.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">📚 Guide Grammatical</a>
+      <a href="ressources.html" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100">🛠️ Outils & Ressources</a>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="bg-gradient-to-r from-rose-950 via-slate-900 to-indigo-950 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 border border-rose-400/30 text-rose-300 text-xs font-bold mb-3">
+        <span>📰 Immersion par la Lecture</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-black tracking-tight">Presse, Médias & Livres en Allemand</h1>
+      <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
+        Progressez naturellement grâce à une sélection de journaux en allemand facile, de grands quotidiens d'actualité, de romans gradués et de livres audio gratuits.
+      </p>
+    </div>
+  </section>
+
+  <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+    <!-- 1. Actualités & Presse en Allemand Facile (Niveau Débutant / Intermédiaire) -->
+    <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+      <div class="max-w-3xl mb-6">
+        <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-2.5 py-0.5 rounded-full border border-rose-200">
+          Niveau A2 - B1
+        </span>
+        <h2 class="text-2xl font-black text-slate-900 mt-2">1. Journaux & Actualités en Allemand Facile</h2>
+        <p class="text-sm text-slate-600 mt-1">
+          Articles courts avec vocabulaire simplifié, phrases claires et audio intégré pour habituer vos oreilles :
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between hover:border-indigo-400 transition group">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-bold text-slate-900 text-base group-hover:text-indigo-600">Nachrichtenleicht</h3>
+              <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-xs font-bold">DLF</span>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Le service officiel de la radio allemande avec les actualités de la semaine écrites en allemand facile et lues lentement.
+            </p>
+          </div>
+          <a href="https://www.nachrichtenleicht.de/" target="_blank" rel="noopener" class="mt-4 text-xs font-bold text-indigo-600 flex items-center justify-between pt-2 border-t border-slate-200">
+            <span>Lire sur Nachrichtenleicht</span> <span>↗</span>
+          </a>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between hover:border-indigo-400 transition group">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-bold text-slate-900 text-base group-hover:text-indigo-600">DW Langsam gesprochen</h3>
+              <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-xs font-bold">Deutsche Welle</span>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Le bulletin d'information quotidien de la Deutsche Welle lu à vitesse réduite avec le texte intégral téléchargeable en PDF.
+            </p>
+          </div>
+          <a href="https://learngerman.dw.com/de/langsam-gesprochene-nachrichten/s-60040332" target="_blank" rel="noopener" class="mt-4 text-xs font-bold text-indigo-600 flex items-center justify-between pt-2 border-t border-slate-200">
+            <span>Écouter le journal DW</span> <span>↗</span>
+          </a>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between hover:border-indigo-400 transition group">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-bold text-slate-900 text-base group-hover:text-indigo-600">Logo! (ZDF)</h3>
+              <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 text-xs font-bold">Vidéo & Textes</span>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Le journal télévisé quotidien de la 2ème chaîne allemande conçu pour expliquer l'actualité mondiale avec clarté et pédagogie.
+            </p>
+          </div>
+          <a href="https://www.zdf.de/kinder/logo" target="_blank" rel="noopener" class="mt-4 text-xs font-bold text-indigo-600 flex items-center justify-between pt-2 border-t border-slate-200">
+            <span>Regarder Logo! ZDF</span> <span>↗</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. Grands Quotidiens & Magazines Allemands (Niveau B1 - C2) -->
+    <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+      <h2 class="text-2xl font-black text-slate-900 mb-6">2. Grands Médias & Quotidiens Nationaux</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+        
+        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between hover:border-indigo-400 transition group">
+          <div>
+            <h3 class="font-black text-slate-900 text-base group-hover:text-indigo-600">DER SPIEGEL</h3>
+            <p class="text-slate-500 mt-1">L'hebdomadaire d'investigation et d'actualité politique le plus influent d'Allemagne.</p>
+          </div>
+          <a href="https://www.spiegel.de/" target="_blank" rel="noopener" class="mt-3 font-bold text-indigo-600 flex justify-between pt-2 border-t">
+            <span>spiegel.de</span> <span>↗</span>
+          </a>
+        </div>
+
+        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between hover:border-indigo-400 transition group">
+          <div>
+            <h3 class="font-black text-slate-900 text-base group-hover:text-indigo-600">DIE ZEIT</h3>
+            <p class="text-slate-500 mt-1">Grand hebdomadaire intellectuel, réputé pour ses analyses de fond et sa rubrique culture.</p>
+          </div>
+          <a href="https://www.zeit.de/" target="_blank" rel="noopener" class="mt-3 font-bold text-indigo-600 flex justify-between pt-2 border-t">
+            <span>zeit.de</span> <span>↗</span>
+          </a>
+        </div>
+
+        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between hover:border-indigo-400 transition group">
+          <div>
+            <h3 class="font-black text-slate-900 text-base group-hover:text-indigo-600">Süddeutsche Zeitung</h3>
+            <p class="text-slate-500 mt-1">Grand quotidien généraliste de référence basé à Munich (SZ), style soigné.</p>
+          </div>
+          <a href="https://www.sueddeutsche.de/" target="_blank" rel="noopener" class="mt-3 font-bold text-indigo-600 flex justify-between pt-2 border-t">
+            <span>sueddeutsche.de</span> <span>↗</span>
+          </a>
+        </div>
+
+        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between hover:border-indigo-400 transition group">
+          <div>
+            <h3 class="font-black text-slate-900 text-base group-hover:text-indigo-600">Tagesschau (ARD)</h3>
+            <p class="text-slate-500 mt-1">Le journal télévisé de 20h le plus regardé du pays, disponible en direct et replay gratuit.</p>
+          </div>
+          <a href="https://www.tagesschau.de/" target="_blank" rel="noopener" class="mt-3 font-bold text-indigo-600 flex justify-between pt-2 border-t">
+            <span>tagesschau.de</span> <span>↗</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. Livres & Romans Conseillés par Niveau -->
+    <section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+      <div class="max-w-3xl mb-6">
+        <span class="text-xs font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2.5 py-0.5 rounded-full border border-purple-200">
+          Bibliothèque Recommandée
+        </span>
+        <h2 class="text-2xl font-black text-slate-900 mt-2">3. Livres & Romans Recommandés par Niveau</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Niveau Débutant A1-A2 -->
+        <div class="p-5 rounded-2xl bg-indigo-50/70 border border-indigo-200 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-black uppercase text-indigo-700">Débutant</span>
+            <span class="px-2 py-0.5 rounded bg-indigo-200 text-indigo-900 text-xs font-bold">Niveau A1 - A2</span>
+          </div>
+
+          <div class="space-y-2 text-xs">
+            <div class="p-3 bg-white rounded-xl border border-indigo-100">
+              <strong class="text-slate-900 block font-bold">« Café in Berlin » (Dino lernt Deutsch)</strong>
+              <span class="text-slate-500 block text-[11px]">André Klein — Histoire courte, vocabulaire contemporain et explications.</span>
+            </div>
+
+            <div class="p-3 bg-white rounded-xl border border-indigo-100">
+              <strong class="text-slate-900 block font-bold">« Short Stories in German for Beginners »</strong>
+              <span class="text-slate-500 block text-[11px]">Olly Richards — 8 histoires courtes captivantes avec lexique bilingue.</span>
+            </div>
+
+            <div class="p-3 bg-white rounded-xl border border-indigo-100">
+              <strong class="text-slate-900 block font-bold">« Emil und die Detektive »</strong>
+              <span class="text-slate-500 block text-[11px]">Erich Kästner (Version simplifiée) — Aventures d'un jeune détective à Berlin.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Niveau Intermédiaire B1 -->
+        <div class="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-black uppercase text-emerald-700">Intermédiaire</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-xs font-bold">Niveau B1</span>
+          </div>
+
+          <div class="space-y-2 text-xs">
+            <div class="p-3 bg-white rounded-xl border border-emerald-100">
+              <strong class="text-slate-900 block font-bold">« Tschick »</strong>
+              <span class="text-slate-500 block text-[11px]">Wolfgang Herrndorf — Road-trip adolescent à travers l'Allemagne, humour et langue parlée.</span>
+            </div>
+
+            <div class="p-3 bg-white rounded-xl border border-emerald-100">
+              <strong class="text-slate-900 block font-bold">« Momo »</strong>
+              <span class="text-slate-500 block text-[11px]">Michael Ende — Conte philosophique poétique sur la valeur du temps.</span>
+            </div>
+
+            <div class="p-3 bg-white rounded-xl border border-emerald-100">
+              <strong class="text-slate-900 block font-bold">« Die Verwandlung » (La Métamorphose)</strong>
+              <span class="text-slate-500 block text-[11px]">Franz Kafka — Vocabulaire précis, phrases classiques et accessibles.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Niveau Avancé B2-C1 -->
+        <div class="p-5 rounded-2xl bg-amber-50/70 border border-amber-200 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-black uppercase text-amber-700">Avancé</span>
+            <span class="px-2 py-0.5 rounded bg-amber-200 text-amber-900 text-xs font-bold">Niveau B2 - C1</span>
+          </div>
+
+          <div class="space-y-2 text-xs">
+            <div class="p-3 bg-white rounded-xl border border-amber-100">
+              <strong class="text-slate-900 block font-bold">« Der Vorleser » (Le Liseur)</strong>
+              <span class="text-slate-500 block text-[11px]">Bernhard Schlink — Roman puissant et poignant sur l'histoire contemporaine allemande.</span>
+            </div>
+
+            <div class="p-3 bg-white rounded-xl border border-amber-100">
+              <strong class="text-slate-900 block font-bold">« Schachnovelle » (Le Joueur d'échecs)</strong>
+              <span class="text-slate-500 block text-[11px]">Stefan Zweig — Chef-d'œuvre littéraire d'une intensité psychologique rare.</span>
+            </div>
+
+            <div class="p-3 bg-white rounded-xl border border-amber-100">
+              <strong class="text-slate-900 block font-bold">« Die unendliche Geschichte »</strong>
+              <span class="text-slate-500 block text-[11px]">Michael Ende — Grand classique fantastique (L'Histoire sans fin).</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Livres Audio Gratuits & Légaux (Hörbücher) -->
+    <section class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-950 text-white rounded-3xl p-6 sm:p-10 shadow-xl">
+      <div class="max-w-3xl mb-6">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-300">Écoute Gratuite</span>
+        <h2 class="text-2xl font-black mt-2">4. Livres Audio Gratuits & Légaux (Hörbücher)</h2>
+        <p class="text-xs text-slate-300 mt-1">
+          Écoutez des livres et histoires lus par des comédiens professionnels pour entraîner votre oreille :
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+        <a href="https://www.ardaudiothek.de/" target="_blank" rel="noopener" class="p-4 bg-white/10 hover:bg-white/20 rounded-2xl border border-white/10 transition block">
+          <div class="text-2xl mb-1">🎧</div>
+          <strong class="text-amber-300 text-sm block">ARD Audiothek</strong>
+          <span class="text-slate-300 text-[11px]">La plus grande médiathèque audio publique d'Allemagne (podcasts, fictions, documentaires).</span>
+        </a>
+
+        <a href="https://www.vorleser.net/" target="_blank" rel="noopener" class="p-4 bg-white/10 hover:bg-white/20 rounded-2xl border border-white/10 transition block">
+          <div class="text-2xl mb-1">📖</div>
+          <strong class="text-amber-300 text-sm block">Vorleser.net</strong>
+          <span class="text-slate-300 text-[11px]">Plus de 800 livres audio classiques allemands gratuits en MP3 légal (Goethe, Schiller, Kafka...).</span>
+        </a>
+
+        <a href="https://librivox.org/" target="_blank" rel="noopener" class="p-4 bg-white/10 hover:bg-white/20 rounded-2xl border border-white/10 transition block">
+          <div class="text-2xl mb-1">🎙️</div>
+          <strong class="text-amber-300 text-sm block">LibriVox auf Deutsch</strong>
+          <span class="text-slate-300 text-[11px]">Enregistrements communautaires de contes, poésies et romans du domaine public.</span>
+        </a>
+
+        <a href="https://www.ohrka.de/" target="_blank" rel="noopener" class="p-4 bg-white/10 hover:bg-white/20 rounded-2xl border border-white/10 transition block">
+          <div class="text-2xl mb-1">🌟</div>
+          <strong class="text-amber-300 text-sm block">Ohrka.de</strong>
+          <span class="text-slate-300 text-[11px]">Histoires et contes lus à voix haute par des acteurs connus, idéal pour travailler son écoute.</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-slate-900 text-white border-t border-slate-800 mt-16 py-8 text-center text-xs text-slate-400">
+    <p>© 2026 Learn Deutsch TOOLS — Presse, Médias & Livres en Allemand.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
