@@ -75,7 +75,7 @@ function renderCategoryButtons() {
   if (!container) return;
 
   container.innerHTML = Object.entries(VOCAB_CATEGORIES).map(([key, cat]) => `
-    <button onclick="selectCategory('${key}')" class="category-tab px-4 py-2.5 rounded-xl font-bold text-sm border transition flex items-center gap-2 ${
+    <button onclick="selectCategory('${key}')" class="category-tab px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm border transition flex items-center gap-2 ${
       currentCategoryKey === key 
         ? 'bg-indigo-600 text-white border-indigo-600 shadow-md' 
         : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200'
@@ -253,6 +253,47 @@ function deleteCustomWord(id) {
   showToast("Mot supprimé du carnet.", "info");
 }
 
+function exportCustomVocabJSON() {
+  const list = getCustomVocab();
+  if (list.length === 0) {
+    showToast("Votre carnet est vide, rien à exporter.", "warning");
+    return;
+  }
+  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(list, null, 2));
+  const downloadAnchor = document.createElement('a');
+  downloadAnchor.setAttribute("href", dataStr);
+  downloadAnchor.setAttribute("download", `mon_vocabulaire_allemand_${new Date().toISOString().split('T')[0]}.json`);
+  document.body.appendChild(downloadAnchor);
+  downloadAnchor.click();
+  downloadAnchor.remove();
+  showToast("Fichier de vocabulaire exporté avec succès ! 💾", "success");
+}
+
+function importCustomVocabJSON(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(event) {
+    try {
+      const imported = JSON.parse(event.target.result);
+      if (Array.isArray(imported)) {
+        const existing = getCustomVocab();
+        const merged = [...imported, ...existing];
+        // Unique by de word
+        const unique = Array.from(new Map(merged.map(item => [item.de.toLowerCase(), item])).values());
+        saveCustomVocab(unique);
+        showToast(`${imported.length} mots importés dans votre carnet ! 🎉`, "success");
+      } else {
+        showToast("Format JSON invalide.", "error");
+      }
+    } catch(err) {
+      showToast("Erreur lors de la lecture du fichier JSON.", "error");
+    }
+  };
+  reader.readAsText(file);
+}
+
 function renderCustomVocabList() {
   const container = document.getElementById('custom-vocab-list');
   const countEl = document.getElementById('custom-vocab-count');
@@ -293,4 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initVocabPage();
   const form = document.getElementById('custom-word-form');
   if (form) form.addEventListener('submit', addCustomWord);
+
+  const importInput = document.getElementById('import-vocab-file');
+  if (importInput) importInput.addEventListener('change', importCustomVocabJSON);
 });
