@@ -1,82 +1,202 @@
-# 🇩🇪 Learn Deutsch TOOLS — La Boîte à Outils Complète d'Allemand, Études & Carrière
+# 🇩🇪 Learn Deutsch TOOLS
 
-> Une suite web moderne, réactive, élégante et interactive pour apprendre l'allemand, réussir ses études universitaires et lancer sa carrière en Allemagne (niveaux A1 à C1).
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Visit%20Site-blue?style=for-the-badge&logo=github)](https://dev-code3d.github.io/Learn-Deutsch-TOOLS/index.html)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Static Site](https://img.shields.io/badge/Static%20Site-100%25%20HTML/CSS/JS-orange?style=for-the-badge)](https://dev-code3d.github.io/Learn-Deutsch-TOOLS/index.html)
 
----
-
-## 🌟 Modules & Pages Disponibles
-
-### 1. 🎓 **Étudier en Allemagne (`pages/etudes-allemagne.html`)**
-- **Guide des universités** : Frais de scolarité quasi gratuits, reconnaissance des diplômes européens, visa de recherche d'emploi post-études de 18 mois.
-- **Certifications exigées** : Tout sur les examens officiels **TestDaF, DSH, telc C1 Hochschule, Goethe-Zertifikat**.
-- **Candidatures & Bourses** : Portails officiels **DAAD, uni-assist, Hochschulkompass, Deutschlandstipendium**.
-- **Logement étudiant** : Trouver une colocation sur **WG-Gesucht** et résidences du *Studierendenwerk*.
-- **Checklist administrative** : *Anmeldung*, *Krankenversicherung* (TK/AOK), compte bancaire *Girokonto* et *Immatrikulation*.
-
-### 2. 💼 **Jobs Étudiants & Carrière en Allemagne (`pages/carrieres-jobs.html`)**
-- **Formats de travail** : Contrat étudiant salarié **Werkstudent (m/w/d)** jusqu'à 20h/semaine, **Minijob (538 €)** exonéré de charges, stages (*Praktikum*) et CDI (*Festanstellung*).
-- **Portails de recrutement majeurs** : StepStone DE, Jobmensa, Zenjob, Xing, LinkedIn Deutschland, Jobbörse Arbeitsagentur, Indeed DE, StudentJob DE.
-- **Modèle de CV allemand (*Lebenslauf tabellarisch*)** : Structure détaillée prête à copier en 1 clic.
-- **Vocabulaire clé du recrutement** : Salaires (*Brutto / Netto*), entretien d'embauche (*Vorstellungsgespräch*), période d'essai (*Probezeit*).
-
-### 3. 📰 **Presse, Médias & Livres en Allemand (`pages/medias-livres.html`)**
-- **Actualités en allemand facile (A2 - B1)** : *Nachrichtenleicht* (DLF avec audio ralenti), *Deutsche Welle (Langsam gesprochene Nachrichten)*, *Logo! ZDF*.
-- **Grands quotidiens nationaux (B1 - C2)** : *Der Spiegel, Die Zeit, Süddeutsche Zeitung (SZ), Tagesschau (ARD)*.
-- **Livres gradués & romans recommandés** :
-  - *Niveau A1-A2* : André Klein (*Café in Berlin - Dino lernt Deutsch*), Olly Richards (*Short Stories in German*).
-  - *Niveau B1* : Wolfgang Herrndorf (*Tschick*), Michael Ende (*Momo*), Franz Kafka (*Die Verwandlung*).
-  - *Niveau B2-C1* : Bernhard Schlink (*Der Vorleser*), Stefan Zweig (*Schachnovelle*).
-- **Livres audio gratuits & légaux** : *ARD Audiothek, Vorleser.net, LibriVox auf Deutsch, Ohrka.de*.
-
-### 4. 📐 **Les 4 Cas Allemands & Prépositions (`pages/declinaisons.html`)**
-- Rôles & questions clés : *Nominativ* (Wer?), *Akkusativ* (Wen/Wohin?), *Dativ* (Wem/Wo?), *Genitiv* (Wessen?).
-- Tableaux interactifs des articles définis, indéfinis, négatifs et pronoms.
-- Les 9 **Wechselpräpositionen** mixtes (*an, auf, hinter, in, neben, über, unter, vor, zwischen*) avec sélecteur comparatif *Statique (Wo? + Dativ)* vs *Mouvement (Wohin? + Akkusativ)* et audio natif.
-- Jeu **« Détective d'Articles »** pour deviner *Der / Die / Das* avec règles mnémoniques.
-
-### 5. 🎨 **Déclinaison des Adjectifs & Simulateur (`pages/adjectifs-declinaisons.html`)**
-- Les 3 types de déclinaisons : Faible (après *der/die/das*), Mixte (après *ein/kein/mein*), Forte (sans article).
-- **Simulateur dynamique en temps réel** avec prononciation audio.
-- Mini-test interactif pour tester les terminaisons (*-e, -en, -er, -es, -em*).
-
-### 6. 🔄 **Conjugateur de Verbes & Audio (`pages/conjugaison.html`)**
-- Conjugateur temps réel pour 50+ verbes essentiels (*Präsens, Präteritum, Perfekt avec haben/sein, Konjunktiv II, Impératif*).
-- Synthèse vocale native allemande sur chaque verbe et exemple.
-- Guide des verbes à particules séparables (*trennbare Verben*) vs inséparables (*be-, ge-, er-, ver-, zer-, ent-, emp-, miss-*).
-- Tableau complet des verbes forts et irréguliers (A1 à B2).
-
-### 7. 🗂️ **Vocabulaire & Flashcards 3D (`pages/vocabulaire.html`)**
-- Cartes mémoires 3D thématiques (*Maison, Travail, Voyages, Restaurant, Émotions*).
-- Carnet de vocabulaire personnalisé avec fonction **💾 Exporter / 📂 Importer en JSON** sauvegardé dans votre navigateur.
-
-### 8. 💬 **Dialogues & Situations Réelles (`pages/dialogues.html`)**
-- Conversations réalistes au restaurant, gare, médecin, et entretien d'embauche.
-- **Mode Rôle Joueur** : masquez les répliques allemandes pour vous entraîner à formuler vos réponses.
-
-### 9. 🎧 **Dictée & Compréhension Orale (`pages/ecoute-dictee.html`)**
-- Dictée audio avec vitesse réglable (*0.75x, 0.9x, 1.1x*) et clavier virtuel pour caractères allemands (*ä, ö, ü, ß*).
-
-### 10. 🎯 **Exercices, Quiz & Satzbau Builder (`pages/exercices.html`)**
-- QCM ciblés avec explications grammaticales détaillées.
-- Atelier de reconstruction de phrases Satzbau (règles V2 et subordonnées).
-
-### 11. 📚 **Guide Grammatical Synthétique (`pages/grammaire.html`)**
-- Règle **TeKaMoLo** (*Temporal ➔ Kausal ➔ Modal ➔ Lokal*), subordonnées vs **ADUSO**, verbes modaux. Version imprimable (`Cmd+P`).
-
-### 12. 🛠️ **Boîte à Outils & Ressources (`pages/ressources.html`)**
-- Convertisseur instantané de chiffres en lettres avec audio, phonétique des sons et dictionnaires.
+**La plateforme interactive complète pour apprendre l'allemand, étudier en Allemagne et construire une carrière professionnelle.**
 
 ---
 
-## 🚀 Déploiement en 1 clic sur GitHub Pages
+## 📖 À propos du projet
 
-Le projet est 100% statique et gratuit :
+Learn Deutsch TOOLS est une application web **100% statique, gratuite et open-source** conçue pour aider les francophones à maîtriser l'allemand de manière interactive et ludique. Que vous soyez débutant (A1) ou avancé (B2/C1), que vous souhaitiez étudier en Allemagne, trouver un job ou simplement perfectionner vos compétences linguistiques, cette plateforme vous offre tous les outils nécessaires.
+
+✨ **Fonctionnalités clés**
+- **100% interactif** : Jeux, quiz, flashcards, simulateurs et exercices avec feedback immédiat
+- **Audio natif** : Prononciation authentique pour chaque mot et exemple
+- **Thématiques complètes** : Vocabulaire organisé par niveaux (A1 à B2+) et par thèmes
+- **Grammaire visuelle** : Tableaux interactifs, schémas et règles expliquées simplement
+- **Pratique réelle** : Dialogues, dictées et mode rôle joueur
+- **Personnalisable** : Carnet de vocabulaire avec export/import JSON
+
+---
+
+## 🎯 Modules & Fonctionnalités
+
+### 📚 Apprentissage de la Langue
+
+#### 1. 📐 **Les 4 Cas Allemands & Prépositions** (`pages/declinaisons.html`)
+- **Nominativ, Akkusativ, Dativ, Genitiv** : Rôles, questions clés et exemples concrets
+- **Tableaux interactifs** : Articles définis, indéfinis, pronoms personnels et négatifs
+- **Wechselpräpositionen** : Les 9 prépositions mixtes (*an, auf, hinter, in, neben, über, unter, vor, zwischen*) avec sélecteur visuel Statique (Dativ) vs Mouvement (Akkusativ)
+- **🎮 Détective d'Articles** : Jeu interactif pour deviner *Der / Die / Das* avec astuces mnémoniques et score
+
+#### 2. 🎨 **Déclinaisons des Adjectifs** (`pages/adjectifs-declinaisons.html`)
+- **3 types de déclinaisons** : Faible (après *der/die/das*), Mixte (après *ein/kein*), Forte (sans article)
+- **Simulateur dynamique** : Testez n'importe quelle combinaison genre/cas/article avec prononciation audio
+- **Terminaisons** : *-e, -en, -er, -es, -em* expliquées avec exemples
+
+#### 3. 🔄 **Conjugaison des Verbes** (`pages/conjugaison.html`)
+- **Conjugateur temps réel** : 50+ verbes essentiels
+- **Tous les temps** : Présent, Prétérit, Perfekt (haben/sein), Konjunktiv II, Impératif
+- **Synthèse vocale native** sur chaque verbe et exemple
+- **Verbes à particules** : Séparables (*trennbare Verben*) vs Inséparables
+- **Tableau des verbes forts** : Infinitif, Préteritum, Partizip II (A1 à B2)
+
+#### 4. 🗂️ **Vocabulaire Thématique & Flashcards 3D** (`pages/vocabulaire.html`)
+- **11 thématiques complètes** (A1 à B2+) :
+  - 🏠 Vie Quotidienne & Maison
+  - 💼 Travail & Monde Professionnel
+  - ✈️ Voyages & Transports
+  - 🍽️ Cuisine & Restaurant
+  - ❤️ Sentiments & Personnalité
+  - 🩺 Santé & Corps Humain
+  - 🎓 Université & Sciences
+  - 💶 Économie, Banque & Finance
+  - 💻 Technologie & Numérique
+  - 🌍 Environnement & Climat
+  - 💬 Connecteurs Logiques & Argumentation
+- **Cartes mémoires 3D interactives** avec prononciation audio
+- **Recherche instantanée** : Trouvez un mot en allemand ou français dans toutes les thématiques
+- **Filtres par niveau** : A1, A2, B1, B2/B2+
+- **💾 Export / 📂 Import JSON** : Sauvegardez et transférez votre carnet de vocabulaire personnalisé
+
+#### 5. 💬 **Dialogues & Situations Réelles** (`pages/dialogues.html`)
+- **Conversations authentiques** : Restaurant, gare, médecin, entretien d'embauche
+- **Mode Rôle Joueur** : Masquez les répliques allemandes pour vous entraîner
+- **Audio natif** pour chaque dialogue
+
+#### 6. 🎧 **Dictée Audio & Compréhension Orale** (`pages/ecoute-dictee.html`)
+- **Dictées interactives** avec correction immédiate
+- **Vitesse réglable** : 0.75x, 0.9x, 1.0x, 1.1x
+- **Clavier virtuel** pour les caractères spéciaux (*ä, ö, ü, ß*)
+
+#### 7. 🎯 **Exercices & Constructeur Satzbau** (`pages/exercices.html`)
+- **QCM grammaticaux** avec explications détaillées
+- **Constructeur de phrases Satzbau** : Reconstituez des phrases avec la règle du verbe en V2
+- **Score et progression** avec système de XP
+
+#### 8. 📚 **Guide Grammatical** (`pages/grammaire.html`)
+- **Règle TeKaMoLo** : Ordre des compléments (Temporal ➔ Kausal ➔ Modal ➔ Lokal)
+- **Subordonnées vs ADUSO** : *weil, dass, wenn* vs *Aber, Denn, Und, Sondern, Oder*
+- **Verbes modaux** : *können, müssen, dürfen, wollen, sollen, möchten*
+- **Mots directionnels** : *rein, raus, rauf, runter, rüber*
+
+#### 9. 🛠️ **Outils & Ressources** (`pages/ressources.html`)
+- **Convertisseur de nombres** : Chiffres en lettres allemandes (0 à 999 999 999) avec audio
+- **Guide phonétique** : Prononciation des sons *Ä, Ö, Ü, ß, ch, sch, ei, eu*
+- **Dictionnaires recommandés** : LEO, PONS, Duden
+- **Podcasts & Chaînes YouTube** : Easy German, Slow German, Nicos Weg
+
+---
+
+### 🎓 Études & Vie en Allemagne
+
+#### 10. 🎓 **Étudier en Allemagne** (`pages/etudes-allemagne.html`)
+- **Guide complet des universités** : Frais de scolarité quasi gratuits, reconnaissance des diplômes
+- **Visa de 18 mois** : Recherche d'emploi post-études
+- **Certifications exigées** : TestDaF, DSH, telc C1 Hochschule, Goethe-Zertifikat
+- **Portails officiels** : DAAD, uni-assist, Hochschulkompass
+- **Bourses** : Deutschlandstipendium et autres financements
+- **Logement étudiant** : WG-Gesucht, Studierendenwerk
+- **Checklist administrative** : Anmeldung, Krankenversicherung, Girokonto, Immatrikulation
+
+#### 11. 💼 **Jobs & Carrière en Allemagne** (`pages/carrieres-jobs.html`)
+- **Werkstudent** : Contrat étudiant salarié jusqu'à 20h/semaine
+- **Minijob (538 €)** : Emploi exonéré de charges sociales
+- **Stages (Praktikum)** et CDI (Festanstellung)
+- **Portails de recrutement** : StepStone DE, Jobmensa, Zenjob, Xing, LinkedIn Deutschland, Arbeitsagentur
+- **📄 Modèle de CV allemand** (*Lebenslauf tabellarisch*) : Structure prête à copier
+- **Vocabulaire professionnel** : Brutto/Netto, Vorstellungsgespräch, Probezeit
+
+#### 12. 📰 **Presse, Médias & Livres** (`pages/medias-livres.html`)
+- **Actualités en allemand facile** (A2-B1) : Nachrichtenleicht (DLF), Deutsche Welle, Logo! ZDF
+- **Grands quotidiens** (B1-C2) : Der Spiegel, Die Zeit, Süddeutsche Zeitung, Tagesschau
+- **Livres gradués** par niveau :
+  - A1-A2 : André Klein (*Café in Berlin*), Olly Richards (*Short Stories in German*)
+  - B1 : Wolfgang Herrndorf (*Tschick*), Michael Ende (*Momo*), Franz Kafka (*Die Verwandlung*)
+  - B2-C1 : Bernhard Schlink (*Der Vorleser*), Stefan Zweig (*Schachnovelle*)
+- **Livres audio gratuits** : ARD Audiothek, Vorleser.net, LibriVox, Ohrka.de
+
+---
+
+## 🚀 Utilisation
+
+### Accès direct
+
+🌐 **Site en ligne** : [https://dev-code3d.github.io/Learn-Deutsch-TOOLS/index.html](https://dev-code3d.github.io/Learn-Deutsch-TOOLS/index.html)
+
+### Déploiement local
+
+1. Cloner le dépôt :
+```bash
+git clone https://github.com/Dev-code3D/Learn-Deutsch-TOOLS.git
+cd Learn-Deutsch-TOOLS
+```
+
+2. Ouvrir dans un navigateur :
+```bash
+# Sur macOS
+open index.html
+
+# Sur Linux
+xdg-open index.html
+
+# Sur Windows
+start index.html
+```
+
+### Déploiement sur GitHub Pages
+
+Le projet est 100% statique et prêt pour GitHub Pages :
+
+1. Poussez vos modifications :
 ```bash
 git add .
-git commit -m "Learn Deutsch TOOLS v3.0 - Études, Jobs & Presse"
+git commit -m "Mise à jour Learn Deutsch TOOLS"
 git push origin main
 ```
-Sur GitHub : **Settings** ➔ **Pages** ➔ Sélectionnez la branche `main` et `/ (root)`. Votre site est en ligne !
+
+2. Activez GitHub Pages :
+   - Allez dans **Settings** ➔ **Pages**
+   - Sélectionnez la branche `main` et le dossier `/ (root)`
+   - Votre site sera disponible à l'URL : `https://votre-username.github.io/Learn-Deutsch-TOOLS/`
 
 ---
-*Viel Erfolg in Deutschland! 🇩🇪*
+
+## 🛠️ Technologies utilisées
+
+- **Frontend** : HTML5, CSS3 (Tailwind CSS via CDN), JavaScript (ES6+)
+- **Icons** : Lucide Icons
+- **Audio** : Web Speech API (synthèse vocale native)
+- **Hébergement** : GitHub Pages
+- **100% statique** : Pas de backend, pas de base de données, pas de dépendances externes
+
+---
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! Voici comment contribuer :
+
+1. **Forker** le dépôt
+2. **Créer une branche** (`git checkout -b feature/ma-fonctionnalite`)
+3. **Commiter** vos modifications (`git commit -m 'Ajout de ma fonctionnalite'`)
+4. **Pousser** vers la branche (`git push origin feature/ma-fonctionnalite`)
+5. **Ouvrir une Pull Request**
+
+---
+
+## 📜 Licence
+
+Ce projet est sous licence **MIT** - vous êtes libre de l'utiliser, le modifier et le distribuer.
+
+---
+
+## 🙏 Remerciements
+
+Un grand merci à tous ceux qui ont inspiré ce projet et à la communauté open-source.
+
+---
+
+*Viel Erfolg beim Deutschlernen! 🇩🇪✨*
