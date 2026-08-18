@@ -161,11 +161,11 @@ start index.html
 
 ## 📜 Licence
 
-**© Assem Dev - Projet Personnel**
+**© Octopi Dev - Projet Personnel**
 
 ✅ **Utilisation libre** : Le site est accessible et utilisable gratuitement par tous.
 🔒 **Modification soumise à autorisation** : Toute modification du code nécessite une demande écrite explicite.
-📧 **Contact** : [assemdevcontact@gmail.com](mailto:assemdevcontact@gmail.com) pour les demandes d'autorisation.
+📧 **Contact** : [octopidev.contact@gmail.com](mailto:octopidev.contact@gmail.com) pour les demandes d'autorisation.
 
 *Les bibliothèques tierces (Tailwind CSS, Lucide Icons) restent sous leur licence respective (MIT/ISC).*
 
