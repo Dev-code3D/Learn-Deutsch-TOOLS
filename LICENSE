@@ -1,0 +1,36 @@
+# Licence d'Utilisation - Learn Deutsch TOOLS
+
+**Copyright (c) Assem Dev - Tous droits réservés**
+
+---
+
+## 📜 Conditions d'Utilisation
+
+### ✅ **UTILISATION LIBRE**
+Ce projet est mis à disposition **gratuitement** pour une utilisation **personnelle, éducative ou professionnelle**. 
+Toute personne peut :
+- Accéder au site en ligne
+- Utiliser toutes les fonctionnalités
+- Partager le lien du site
+- Télécharger et utiliser le code **sans modification**
+
+---
+
+### 🔒 **MODIFICATION : AUTORISATION OBLIGATOIRE**
+**Toute modification du code source, du design ou du contenu doit faire l'objet d'une demande écrite explicite à l'auteur.**
+
+- ❌ **Interdit** : Modifier, adapter, ou redistribuer une version modifiée **sans autorisation**
+- ✅ **Autorisé** : Modifier **uniquement après accord écrit** de l'auteur
+
+Pour demander une autorisation de modification, contactez :
+**Assem Dev** | [assemdevcontact@gmail.com](mailto:assemdevcontact@gmail.com)
+
+---
+
+### 📌 **Dépendance aux bibliothèques tierces**
+Ce projet utilise des bibliothèques externes sous leur propre licence :
+- **Tailwind CSS** (MIT License)
+- **Lucide Icons** (ISC License)
+- **Web Speech API** (Standard du web)
+
+Ces dépendances restent régies par leurs licences respectives.

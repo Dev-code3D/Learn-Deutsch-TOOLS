@@ -1,7 +1,7 @@
 # 🇩🇪 Learn Deutsch TOOLS
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Visit%20Site-blue?style=for-the-badge&logo=github)](https://dev-code3d.github.io/Learn-Deutsch-TOOLS/index.html)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![License: Custom](https://img.shields.io/badge/License-Custom-red.svg?style=for-the-badge)](LICENSE)
 [![Static Site](https://img.shields.io/badge/Static%20Site-100%25%20HTML/CSS/JS-orange?style=for-the-badge)](https://dev-code3d.github.io/Learn-Deutsch-TOOLS/index.html)
 
 **La plateforme interactive complète pour apprendre l'allemand, étudier en Allemagne et construire une carrière professionnelle.**
@@ -10,7 +10,7 @@
 
 ## 📖 À propos du projet
 
-Learn Deutsch TOOLS est une application web **100% statique, gratuite et open-source** conçue pour aider les francophones à maîtriser l'allemand de manière interactive et ludique. Que vous soyez débutant (A1) ou avancé (B2/C1), que vous souhaitiez étudier en Allemagne, trouver un job ou simplement perfectionner vos compétences linguistiques, cette plateforme vous offre tous les outils nécessaires.
+Learn Deutsch TOOLS est une application web **100% statique, gratuite et open-source** conçue pour aider les francophones à maîtriser l'allemand de manière interactive et ludique. Que vous soyez débutant (A1) ou avancé (B2+, C1), que vous souhaitiez étudier en Allemagne, trouver un job ou simplement perfectionner vos compétences linguistiques, cette plateforme vous offre tous les outils nécessaires.
 
 ✨ **Fonctionnalités clés**
 - **100% interactif** : Jeux, quiz, flashcards, simulateurs et exercices avec feedback immédiat
@@ -147,22 +147,6 @@ xdg-open index.html
 start index.html
 ```
 
-### Déploiement sur GitHub Pages
-
-Le projet est 100% statique et prêt pour GitHub Pages :
-
-1. Poussez vos modifications :
-```bash
-git add .
-git commit -m "Mise à jour Learn Deutsch TOOLS"
-git push origin main
-```
-
-2. Activez GitHub Pages :
-   - Allez dans **Settings** ➔ **Pages**
-   - Sélectionnez la branche `main` et le dossier `/ (root)`
-   - Votre site sera disponible à l'URL : `https://votre-username.github.io/Learn-Deutsch-TOOLS/`
-
 ---
 
 ## 🛠️ Technologies utilisées
@@ -175,27 +159,15 @@ git push origin main
 
 ---
 
-## 🤝 Contribution
-
-Les contributions sont les bienvenues ! Voici comment contribuer :
-
-1. **Forker** le dépôt
-2. **Créer une branche** (`git checkout -b feature/ma-fonctionnalite`)
-3. **Commiter** vos modifications (`git commit -m 'Ajout de ma fonctionnalite'`)
-4. **Pousser** vers la branche (`git push origin feature/ma-fonctionnalite`)
-5. **Ouvrir une Pull Request**
-
----
-
 ## 📜 Licence
 
-Ce projet est sous licence **MIT** - vous êtes libre de l'utiliser, le modifier et le distribuer.
+**© Assem Dev - Projet Personnel**
 
----
+✅ **Utilisation libre** : Le site est accessible et utilisable gratuitement par tous.
+🔒 **Modification soumise à autorisation** : Toute modification du code nécessite une demande écrite explicite.
+📧 **Contact** : [assemdevcontact@gmail.com](mailto:assemdevcontact@gmail.com) pour les demandes d'autorisation.
 
-## 🙏 Remerciements
-
-Un grand merci à tous ceux qui ont inspiré ce projet et à la communauté open-source.
+*Les bibliothèques tierces (Tailwind CSS, Lucide Icons) restent sous leur licence respective (MIT/ISC).*
 
 ---
 
