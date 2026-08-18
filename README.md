@@ -171,4 +171,10 @@ start index.html
 
 ---
 
+## 🎞️ Scan le qr-code pour acceder au site web :
+
+[![QR Code Learn Deutsch TOOLS](qrcode-learndeutschtools.png)](https://dev-code3d.github.io/Learn-Deutsch-TOOLS/index.html)
+
+---
+
 *Viel Erfolg beim Deutschlernen! 🇩🇪✨*
