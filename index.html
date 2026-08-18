@@ -514,6 +514,9 @@
             <li><a href="pages/ressources.html#number-converter" class="hover:text-white transition">Chiffres en Lettres</a></li>
             <li><a href="pages/ressources.html#phonetics" class="hover:text-white transition">Phonétique & Sons</a></li>
           </ul>
+          <div class="mt-4 flex justify-end">
+            <img src="qrcode-learndeutschtools.png" alt="QR Code Learn Deutsch TOOLS" title="Scannez pour accéder au site" class="w-20 h-20 cursor-pointer hover:scale-105 transition-transform rounded-lg shadow-md" onclick="openQrModal()" id="qr-code-footer">
+          </div>
         </div>
 
       </div>
@@ -529,5 +532,43 @@
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
+
+  <!-- QR Code Modal -->
+  <div id="qr-modal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl p-6 max-w-sm w-full relative shadow-2xl border border-slate-200">
+      <button onclick="closeQrModal()" class="absolute top-3 right-3 text-slate-500 hover:text-slate-800 text-2xl transition">&times;</button>
+      <h3 class="text-lg font-bold text-slate-900 mb-4 text-center">QR Code - Learn Deutsch TOOLS</h3>
+      <img src="qrcode-learndeutschtools.png" alt="QR Code Learn Deutsch TOOLS" class="w-full h-auto mx-auto rounded-lg">
+      <p class="text-center text-sm text-slate-600 mt-4">Scannez pour accéder au site</p>
+    </div>
+  </div>
+
+  <script>
+    function openQrModal() {
+      document.getElementById('qr-modal').classList.remove('hidden');
+      document.getElementById('qr-modal').classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeQrModal() {
+      document.getElementById('qr-modal').classList.add('hidden');
+      document.getElementById('qr-modal').classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeQrModal();
+      }
+    });
+
+    // Close modal on background click
+    document.getElementById('qr-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeQrModal();
+      }
+    });
+  </script>
 </body>
 </html>
