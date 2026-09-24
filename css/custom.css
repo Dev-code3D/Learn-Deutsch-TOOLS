@@ -204,3 +204,65 @@ body {
     page-break-inside: avoid;
   }
 }
+
+/* ==========================================================================
+   Responsive Design Enhancements for Custom CSS
+   ========================================================================== */
+
+/* Ensure all elements respect viewport boundaries */
+html {
+    overflow-x: hidden;
+}
+
+body {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Prevent horizontal overflow on all elements */
+* {
+    max-width: 100%;
+}
+
+/* Images and media */
+img, video, iframe, embed, object, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Tablet responsiveness */
+@media (min-width: 768px) and (max-width: 1024px) {
+    :root {
+        --font-size-base: 0.95rem;
+    }
+    
+    .flip-card {
+        max-width: 90vw;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+    :root {
+        --font-size-base: 0.9rem;
+    }
+    
+    .flip-card {
+        max-width: 95vw;
+        perspective: 800px;
+    }
+    
+    .glass-panel, .dark-glass-panel {
+        border-radius: 0.75rem;
+    }
+}
+
+/* Large desktop */
+@media (min-width: 1440px) {
+    .flip-card {
+        max-width: 600px;
+    }
+}

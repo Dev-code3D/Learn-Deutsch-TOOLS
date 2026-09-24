@@ -6,12 +6,19 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 header {
@@ -85,6 +92,8 @@ section {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: none;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 section.active {
@@ -390,4 +399,135 @@ select:focus, input[type="text"]:focus {
         width: 60px !important;
         height: 60px !important;
     }
+}
+
+/* ============================================
+   Responsive Design Enhancements
+   ============================================ */
+
+/* Tablet - 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+        padding: 0 1.5rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 95%;
+    }
+    
+    .nav-btn {
+        min-width: 120px;
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    table {
+        font-size: 0.9rem;
+    }
+    
+    td, th {
+        padding: 0.75rem;
+    }
+}
+
+/* Small Desktop - 1024px to 1200px */
+@media (min-width: 1024px) and (max-width: 1200px) {
+    .container {
+        max-width: 95%;
+        padding: 0 1rem;
+    }
+    
+    nav ul {
+        max-width: 98%;
+    }
+    
+    .nav-btn {
+        min-width: 110px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Large Desktop - 1200px and above */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1100px;
+        padding: 0 2rem;
+    }
+    
+    nav ul {
+        max-width: 1100px;
+    }
+    
+    header h1 {
+        font-size: 2.8rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+    
+    table {
+        font-size: 1rem;
+    }
+    
+    td, th {
+        padding: 1rem;
+    }
+}
+
+/* Extra Large Desktop - 1440px and above */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    nav ul {
+        max-width: 1200px;
+    }
+}
+
+/* Fix horizontal overflow issues */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 0.5rem;
+        margin: 1rem auto;
+    }
+    
+    nav ul {
+        max-width: 100%;
+        padding: 0.5rem;
+    }
+    
+    .nav-btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Ensure no element exceeds viewport width */
+img, video, iframe, embed, object {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent text overflow */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
