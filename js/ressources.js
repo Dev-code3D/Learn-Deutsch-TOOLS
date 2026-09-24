@@ -10,9 +10,9 @@ const ONES = ["", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "a
 const TEENS = ["zehn", "elf", "zwölf", "dreizehn", "vierzehn", "fünfzehn", "sechzehn", "siebzehn", "achtzehn", "neunzehn"];
 const TENS = ["", "zehn", "zwanzig", "dreißig", "vierzig", "fünfzig", "sechzig", "siebzig", "achtzig", "neunzig"];
 
-function numberToGermanWords(num) {
-  if (num === 0) return "null";
-  if (num < 0) return "minus " + numberToGermanWords(Math.abs(num));
+function numberToGermanWords(num, withDashes = true) {
+  if (num === 0) return withDashes ? "null" : "null";
+  if (num < 0) return "minus " + numberToGermanWords(Math.abs(num), withDashes);
 
   if (num < 10) return ONES[num];
   if (num < 20) return TEENS[num - 10];
@@ -20,29 +20,32 @@ function numberToGermanWords(num) {
     const unit = num % 10;
     const ten = Math.floor(num / 10);
     if (unit === 0) return TENS[ten];
-    if (unit === 1) return `einund${TENS[ten]}`;
-    return `${ONES[unit]}und${TENS[ten]}`;
+    if (unit === 1) return withDashes ? `ein<span class="dash">-</span>und<span class="dash">-</span>${TENS[ten]}` : `einund${TENS[ten]}`;
+    return withDashes ? `${ONES[unit]}<span class="dash">-</span>und<span class="dash">-</span>${TENS[ten]}` : `${ONES[unit]}und${TENS[ten]}`;
   }
   if (num < 1000) {
     const hundred = Math.floor(num / 100);
     const remainder = num % 100;
-    const hundredPrefix = hundred === 1 ? "einhundert" : `${ONES[hundred]}hundert`;
+    const hundredPrefix = hundred === 1 ? (withDashes ? "ein<span class="dash">-</span>hundert" : "einhundert") : (withDashes ? `${ONES[hundred]}<span class="dash">-</span>hundert` : `${ONES[hundred]}hundert`);
     if (remainder === 0) return hundredPrefix;
-    return `${hundredPrefix}${numberToGermanWords(remainder)}`;
+    const remainderText = numberToGermanWords(remainder, withDashes);
+    return withDashes ? `${hundredPrefix}<span class="dash">-</span>${remainderText}` : `${hundredPrefix}${remainderText}`;
   }
   if (num < 1000000) {
     const thousand = Math.floor(num / 1000);
     const remainder = num % 1000;
-    const thousandPrefix = thousand === 1 ? "eintausend" : `${numberToGermanWords(thousand)}tausend`;
+    const thousandPrefix = thousand === 1 ? (withDashes ? "ein<span class="dash">-</span>tausend" : "eintausend") : (withDashes ? `${numberToGermanWords(thousand, withDashes)}<span class="dash">-</span>tausend` : `${numberToGermanWords(thousand, withDashes)}tausend`);
     if (remainder === 0) return thousandPrefix;
-    return `${thousandPrefix}${numberToGermanWords(remainder)}`;
+    const remainderText = numberToGermanWords(remainder, withDashes);
+    return withDashes ? `${thousandPrefix}<span class="dash">-</span>${remainderText}` : `${thousandPrefix}${remainderText}`;
   }
   if (num < 1000000000) {
     const million = Math.floor(num / 1000000);
     const remainder = num % 1000000;
-    const millionWord = million === 1 ? "eine Million " : `${numberToGermanWords(million)} Millionen `;
-    if (remainder === 0) return millionWord.trim();
-    return `${millionWord}${numberToGermanWords(remainder)}`;
+    const millionWord = million === 1 ? (withDashes ? "eine<span class="dash">-</span>Million" : "eine Million") : (withDashes ? `${numberToGermanWords(million, withDashes)}<span class="dash">-</span>Millionen` : `${numberToGermanWords(million, withDashes)} Millionen`);
+    if (remainder === 0) return millionWord;
+    const remainderText = numberToGermanWords(remainder, withDashes);
+    return withDashes ? `${millionWord}<span class="dash">-</span>${remainderText}` : `${millionWord}${remainderText}`;
   }
   return "Nombre trop grand (max 999 999 999)";
 }
@@ -56,11 +59,11 @@ function initNumberConverter() {
   const update = () => {
     const val = parseInt(input.value, 10);
     if (isNaN(val)) {
-      resultText.textContent = "Entrez un nombre entier";
+      resultText.innerHTML = "Entrez un nombre entier";
       return;
     }
-    const german = numberToGermanWords(val);
-    resultText.textContent = german;
+    const german = numberToGermanWords(val, true);
+    resultText.innerHTML = german;
   };
 
   input.addEventListener('input', update);

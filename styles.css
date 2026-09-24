@@ -531,3 +531,10 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
+
+/* Number to words converter - dash styling */
+.dash {
+    color: #cbd5e1;
+    opacity: 0.8;
+    font-weight: normal;
+}
