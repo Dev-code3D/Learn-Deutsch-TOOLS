@@ -21,8 +21,11 @@ function openQrModal() {
     });
 
     // Close modal on background click
-    document.getElementById('qr-modal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeQrModal();
-      }
-    });
+    const modalEl = document.getElementById('qr-modal');
+    if (modalEl) {
+      modalEl.addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeQrModal();
+        }
+      });
+    }

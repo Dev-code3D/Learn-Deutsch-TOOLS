@@ -11,7 +11,7 @@ const TEENS = ["zehn", "elf", "zwölf", "dreizehn", "vierzehn", "fünfzehn", "se
 const TENS = ["", "zehn", "zwanzig", "dreißig", "vierzig", "fünfzig", "sechzig", "siebzig", "achtzig", "neunzig"];
 
 function numberToGermanWords(num, withDashes = true) {
-  if (num === 0) return withDashes ? "null" : "null";
+  if (num === 0) return "null";
   if (num < 0) return "minus " + numberToGermanWords(Math.abs(num), withDashes);
 
   if (num < 10) return ONES[num];
@@ -26,7 +26,7 @@ function numberToGermanWords(num, withDashes = true) {
   if (num < 1000) {
     const hundred = Math.floor(num / 100);
     const remainder = num % 100;
-    const hundredPrefix = hundred === 1 ? (withDashes ? "ein<span class="dash">-</span>hundert" : "einhundert") : (withDashes ? `${ONES[hundred]}<span class="dash">-</span>hundert` : `${ONES[hundred]}hundert`);
+    const hundredPrefix = hundred === 1 ? (withDashes ? `ein<span class="dash">-</span>hundert` : "einhundert") : (withDashes ? `${ONES[hundred]}<span class="dash">-</span>hundert` : `${ONES[hundred]}hundert`);
     if (remainder === 0) return hundredPrefix;
     const remainderText = numberToGermanWords(remainder, withDashes);
     return withDashes ? `${hundredPrefix}<span class="dash">-</span>${remainderText}` : `${hundredPrefix}${remainderText}`;
@@ -34,7 +34,7 @@ function numberToGermanWords(num, withDashes = true) {
   if (num < 1000000) {
     const thousand = Math.floor(num / 1000);
     const remainder = num % 1000;
-    const thousandPrefix = thousand === 1 ? (withDashes ? "ein<span class="dash">-</span>tausend" : "eintausend") : (withDashes ? `${numberToGermanWords(thousand, withDashes)}<span class="dash">-</span>tausend` : `${numberToGermanWords(thousand, withDashes)}tausend`);
+    const thousandPrefix = thousand === 1 ? (withDashes ? `ein<span class="dash">-</span>tausend` : "eintausend") : (withDashes ? `${numberToGermanWords(thousand, withDashes)}<span class="dash">-</span>tausend` : `${numberToGermanWords(thousand, withDashes)}tausend`);
     if (remainder === 0) return thousandPrefix;
     const remainderText = numberToGermanWords(remainder, withDashes);
     return withDashes ? `${thousandPrefix}<span class="dash">-</span>${remainderText}` : `${thousandPrefix}${remainderText}`;
@@ -42,7 +42,7 @@ function numberToGermanWords(num, withDashes = true) {
   if (num < 1000000000) {
     const million = Math.floor(num / 1000000);
     const remainder = num % 1000000;
-    const millionWord = million === 1 ? (withDashes ? "eine<span class="dash">-</span>Million" : "eine Million") : (withDashes ? `${numberToGermanWords(million, withDashes)}<span class="dash">-</span>Millionen` : `${numberToGermanWords(million, withDashes)} Millionen`);
+    const millionWord = million === 1 ? (withDashes ? `eine<span class="dash">-</span>Million` : "eine Million") : (withDashes ? `${numberToGermanWords(million, withDashes)}<span class="dash">-</span>Millionen` : `${numberToGermanWords(million, withDashes)} Millionen`);
     if (remainder === 0) return millionWord;
     const remainderText = numberToGermanWords(remainder, withDashes);
     return withDashes ? `${millionWord}<span class="dash">-</span>${remainderText}` : `${millionWord}${remainderText}`;
