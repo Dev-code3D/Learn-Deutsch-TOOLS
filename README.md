@@ -10,15 +10,15 @@
 
 ## 📖 À propos du projet
 
-Learn Deutsch TOOLS est une application web **100% statique, gratuite et open-source** conçue pour aider les francophones à maîtriser l'allemand de manière interactive et ludique. Que vous soyez débutant (A1) ou avancé (B2+, C1), que vous souhaitiez étudier en Allemagne, trouver un job ou simplement perfectionner vos compétences linguistiques, cette plateforme vous offre tous les outils nécessaires.
+**Learn Deutsch TOOLS** est une application web **100% statique et gratuite** conçue pour aider les francophones à maîtriser l'allemand de manière interactive et ludique. Que vous soyez débutant (A1) ou avancé (B2+, C1), que vous souhaitiez étudier en Allemagne, trouver un job ou simplement perfectionner vos compétences linguistiques, cette plateforme vous offre tous les outils nécessaires.
 
 ✨ **Fonctionnalités clés**
-- **100% interactif** : Jeux, quiz, flashcards, simulateurs et exercices avec feedback immédiat
-- **Audio natif** : Prononciation authentique pour chaque mot et exemple
-- **Thématiques complètes** : Vocabulaire organisé par niveaux (A1 à B2+) et par thèmes
-- **Grammaire visuelle** : Tableaux interactifs, schémas et règles expliquées simplement
-- **Pratique réelle** : Dialogues, dictées et mode rôle joueur
-- **Personnalisable** : Carnet de vocabulaire avec export/import JSON
+- **100% interactif** : Jeux, quiz, flashcards, simulateurs et exercices avec feedback immédiat.
+- **Audio natif** : Prononciation authentique pour chaque mot et exemple.
+- **Thématiques complètes** : Vocabulaire organisé par niveaux (A1 à B2+) et par thèmes.
+- **Grammaire visuelle** : Tableaux interactifs, schémas et règles expliquées simplement.
+- **Pratique réelle** : Dialogues, dictées et mode rôle joueur.
+- **Personnalisable** : Carnet de vocabulaire avec export/import JSON.
 
 ---
 
@@ -27,22 +27,22 @@ Learn Deutsch TOOLS est une application web **100% statique, gratuite et open-so
 ### 📚 Apprentissage de la Langue
 
 #### 1. 📐 **Les 4 Cas Allemands & Prépositions** (`pages/declinaisons.html`)
-- **Nominativ, Akkusativ, Dativ, Genitiv** : Rôles, questions clés et exemples concrets
-- **Tableaux interactifs** : Articles définis, indéfinis, pronoms personnels et négatifs
-- **Wechselpräpositionen** : Les 9 prépositions mixtes (*an, auf, hinter, in, neben, über, unter, vor, zwischen*) avec sélecteur visuel Statique (Dativ) vs Mouvement (Akkusativ)
-- **🎮 Détective d'Articles** : Jeu interactif pour deviner *Der / Die / Das* avec astuces mnémoniques et score
+- **Nominativ, Akkusativ, Dativ, Genitiv** : Rôles, questions clés et exemples concrets.
+- **Tableaux interactifs** : Articles définis, indéfinis, pronoms personnels et négatifs.
+- **Wechselpräpositionen** : Les 9 prépositions mixtes (*an, auf, hinter, in, neben, über, unter, vor, zwischen*) avec sélecteur visuel Statique (Dativ) vs Mouvement (Akkusativ).
+- **🎮 Détective d'Articles** : Jeu interactif pour deviner *Der / Die / Das* avec astuces mnémoniques et score.
 
 #### 2. 🎨 **Déclinaisons des Adjectifs** (`pages/adjectifs-declinaisons.html`)
-- **3 types de déclinaisons** : Faible (après *der/die/das*), Mixte (après *ein/kein*), Forte (sans article)
-- **Simulateur dynamique** : Testez n'importe quelle combinaison genre/cas/article avec prononciation audio
-- **Terminaisons** : *-e, -en, -er, -es, -em* expliquées avec exemples
+- **3 types de déclinaisons** : Faible (après *der/die/das*), Mixte (après *ein/kein*), Forte (sans article).
+- **Simulateur dynamique** : Testez n'importe quelle combinaison genre/cas/article avec prononciation audio.
+- **Terminaisons** : *-e, -en, -er, -es, -em* expliquées avec exemples.
 
 #### 3. 🔄 **Conjugaison des Verbes** (`pages/conjugaison.html`)
-- **Conjugateur temps réel** : 50+ verbes essentiels
-- **Tous les temps** : Présent, Prétérit, Perfekt (haben/sein), Konjunktiv II, Impératif
-- **Synthèse vocale native** sur chaque verbe et exemple
-- **Verbes à particules** : Séparables (*trennbare Verben*) vs Inséparables
-- **Tableau des verbes forts** : Infinitif, Préteritum, Partizip II (A1 à B2)
+- **Conjugateur temps réel** : 50+ verbes essentiels.
+- **Tous les temps** : Présent, Prétérit, Perfekt (haben/sein), Konjunktiv II, Impératif.
+- **Synthèse vocale native** sur chaque verbe et exemple.
+- **Verbes à particules** : Séparables (*trennbare Verben*) vs Inséparables.
+- **Tableau des verbes forts** : Infinitif, Préteritum, Partizip II (A1 à B2).
 
 #### 4. 🗂️ **Vocabulaire Thématique & Flashcards 3D** (`pages/vocabulaire.html`)
 - **11 thématiques complètes** (A1 à B2+) :
@@ -57,124 +57,143 @@ Learn Deutsch TOOLS est une application web **100% statique, gratuite et open-so
   - 💻 Technologie & Numérique
   - 🌍 Environnement & Climat
   - 💬 Connecteurs Logiques & Argumentation
-- **Cartes mémoires 3D interactives** avec prononciation audio
-- **Recherche instantanée** : Trouvez un mot en allemand ou français dans toutes les thématiques
-- **Filtres par niveau** : A1, A2, B1, B2/B2+
-- **💾 Export / 📂 Import JSON** : Sauvegardez et transférez votre carnet de vocabulaire personnalisé
+- **Cartes mémoires 3D interactives** avec prononciation audio.
+- **Recherche instantanée** : Trouvez un mot en allemand ou français dans toutes les thématiques.
+- **Filtres par niveau** : A1, A2, B1, B2/B2+.
+- **💾 Export / 📂 Import JSON** : Sauvegardez et transférez votre carnet de vocabulaire personnalisé.
 
 #### 5. 💬 **Dialogues & Situations Réelles** (`pages/dialogues.html`)
-- **Conversations authentiques** : Restaurant, gare, médecin, entretien d'embauche
-- **Mode Rôle Joueur** : Masquez les répliques allemandes pour vous entraîner
-- **Audio natif** pour chaque dialogue
+- **Conversations authentiques** : Restaurant, gare, médecin, entretien d'embauche.
+- **Mode Rôle Joueur** : Masquez les répliques allemandes pour vous entraîner.
+- **Audio natif** pour chaque dialogue.
 
 #### 6. 🎧 **Dictée Audio & Compréhension Orale** (`pages/ecoute-dictee.html`)
-- **Dictées interactives** avec correction immédiate
-- **Vitesse réglable** : 0.75x, 0.9x, 1.0x, 1.1x
-- **Clavier virtuel** pour les caractères spéciaux (*ä, ö, ü, ß*)
+- **Dictées interactives** avec correction immédiate.
+- **Vitesse réglable** : 0.75x, 0.9x, 1.0x, 1.1x.
+- **Clavier virtuel** pour les caractères spéciaux (*ä, ö, ü, ß*).
 
 #### 7. 🎯 **Exercices & Constructeur Satzbau** (`pages/exercices.html`)
-- **QCM grammaticaux** avec explications détaillées
-- **Constructeur de phrases Satzbau** : Reconstituez des phrases avec la règle du verbe en V2
-- **Score et progression** avec système de XP
+- **QCM grammaticaux** avec explications détaillées.
+- **Constructeur de phrases Satzbau** : Reconstituez des phrases avec la règle du verbe en V2.
+- **Score et progression** avec système de XP.
 
 #### 8. 📚 **Guide Grammatical** (`pages/grammaire.html`)
-- **Règle TeKaMoLo** : Ordre des compléments (Temporal ➔ Kausal ➔ Modal ➔ Lokal)
-- **Subordonnées vs ADUSO** : *weil, dass, wenn* vs *Aber, Denn, Und, Sondern, Oder*
-- **Verbes modaux** : *können, müssen, dürfen, wollen, sollen, möchten*
-- **Mots directionnels** : *rein, raus, rauf, runter, rüber*
+- **Règle TeKaMoLo** : Ordre des compléments (Temporal ➔ Kausal ➔ Modal ➔ Lokal).
+- **Subordonnées vs ADUSO** : *weil, dass, wenn* vs *Aber, Denn, Und, Sondern, Oder*.
+- **Verbes modaux** : *können, müssen, dürfen, wollen, sollen, möchten*.
+- **Mots directionnels** : *rein, raus, rauf, runter, rüber*.
 
 #### 9. 🛠️ **Outils & Ressources** (`pages/ressources.html`)
-- **Convertisseur de nombres** : Chiffres en lettres allemandes (0 à 999 999 999) avec audio
-- **Guide phonétique** : Prononciation des sons *Ä, Ö, Ü, ß, ch, sch, ei, eu*
-- **Dictionnaires recommandés** : LEO, PONS, Duden
-- **Podcasts & Chaînes YouTube** : Easy German, Slow German, Nicos Weg
+- **Convertisseur de nombres** : Chiffres en lettres allemandes (0 à 999 999 999) avec audio.
+- **Guide phonétique** : Prononciation des sons *Ä, Ö, Ü, ß, ch, sch, ei, eu*.
+- **Dictionnaires recommandés** : LEO, PONS, Duden.
+- **Podcasts & Chaînes YouTube** : Easy German, Slow German, Nicos Weg.
 
 ---
 
 ### 🎓 Études & Vie en Allemagne
 
 #### 10. 🎓 **Étudier en Allemagne** (`pages/etudes-allemagne.html`)
-- **Guide complet des universités** : Frais de scolarité quasi gratuits, reconnaissance des diplômes
-- **Visa de 18 mois** : Recherche d'emploi post-études
-- **Certifications exigées** : TestDaF, DSH, telc C1 Hochschule, Goethe-Zertifikat
-- **Portails officiels** : DAAD, uni-assist, Hochschulkompass
-- **Bourses** : Deutschlandstipendium et autres financements
-- **Logement étudiant** : WG-Gesucht, Studierendenwerk
-- **Checklist administrative** : Anmeldung, Krankenversicherung, Girokonto, Immatrikulation
+- **Guide complet des universités** : Frais de scolarité quasi gratuits, reconnaissance des diplômes.
+- **Visa de 18 mois** : Recherche d'emploi post-études.
+- **Certifications exigées** : TestDaF, DSH, telc C1 Hochschule, Goethe-Zertifikat.
+- **Portails officiels** : DAAD, uni-assist, Hochschulkompass.
+- **Bourses** : Deutschlandstipendium et autres financements.
+- **Logement étudiant** : WG-Gesucht, Studierendenwerk.
+- **Checklist administrative** : Anmeldung, Krankenversicherung, Girokonto, Immatrikulation.
 
 #### 11. 💼 **Jobs & Carrière en Allemagne** (`pages/carrieres-jobs.html`)
-- **Werkstudent** : Contrat étudiant salarié jusqu'à 20h/semaine
-- **Minijob (538 €)** : Emploi exonéré de charges sociales
-- **Stages (Praktikum)** et CDI (Festanstellung)
-- **Portails de recrutement** : StepStone DE, Jobmensa, Zenjob, Xing, LinkedIn Deutschland, Arbeitsagentur
-- **📄 Modèle de CV allemand** (*Lebenslauf tabellarisch*) : Structure prête à copier
-- **Vocabulaire professionnel** : Brutto/Netto, Vorstellungsgespräch, Probezeit
+- **Werkstudent** : Contrat étudiant salarié jusqu'à 20h/semaine.
+- **Minijob (538 €)** : Emploi exonéré de charges sociales.
+- **Stages (Praktikum)** et CDI (Festanstellung).
+- **Portails de recrutement** : StepStone DE, Jobmensa, Zenjob, Xing, LinkedIn Deutschland, Arbeitsagentur.
+- **📄 Modèle de CV allemand** (*Lebenslauf tabellarisch*) : Structure prête à copier.
+- **Vocabulaire professionnel** : Brutto/Netto, Vorstellungsgespräch, Probezeit.
 
 #### 12. 📰 **Presse, Médias & Livres** (`pages/medias-livres.html`)
-- **Actualités en allemand facile** (A2-B1) : Nachrichtenleicht (DLF), Deutsche Welle, Logo! ZDF
-- **Grands quotidiens** (B1-C2) : Der Spiegel, Die Zeit, Süddeutsche Zeitung, Tagesschau
+- **Actualités en allemand facile** (A2-B1) : Nachrichtenleicht (DLF), Deutsche Welle, Logo! ZDF.
+- **Grands quotidiens** (B1-C2) : Der Spiegel, Die Zeit, Süddeutsche Zeitung, Tagesschau.
 - **Livres gradués** par niveau :
-  - A1-A2 : André Klein (*Café in Berlin*), Olly Richards (*Short Stories in German*)
-  - B1 : Wolfgang Herrndorf (*Tschick*), Michael Ende (*Momo*), Franz Kafka (*Die Verwandlung*)
-  - B2-C1 : Bernhard Schlink (*Der Vorleser*), Stefan Zweig (*Schachnovelle*)
-- **Livres audio gratuits** : ARD Audiothek, Vorleser.net, LibriVox, Ohrka.de
+  - A1-A2 : André Klein (*Café in Berlin*), Olly Richards (*Short Stories in German*).
+  - B1 : Wolfgang Herrndorf (*Tschick*), Michael Ende (*Momo*), Franz Kafka (*Die Verwandlung*).
+  - B2-C1 : Bernhard Schlink (*Der Vorleser*), Stefan Zweig (*Schachnovelle*).
+- **Livres audio gratuits** : ARD Audiothek, Vorleser.net, LibriVox, Ohrka.de.
 
 ---
 
 ## 🚀 Utilisation
 
 ### Accès direct
-
 🌐 **Site en ligne** : [https://dev-code3d.github.io/Learn-Deutsch-TOOLS/index.html](https://dev-code3d.github.io/Learn-Deutsch-TOOLS/index.html)
 
 ### Déploiement local
-
 1. Cloner le dépôt :
-```bash
-git clone https://github.com/Dev-code3D/Learn-Deutsch-TOOLS.git
-cd Learn-Deutsch-TOOLS
-```
+   ```bash
+   git clone https://github.com/Dev-code3D/Learn-Deutsch-TOOLS.git
+   cd Learn-Deutsch-TOOLS
+   ```
 
 2. Ouvrir dans un navigateur :
-```bash
-# Sur macOS
-open index.html
+   ```bash
+   # Sur macOS
+   open index.html
 
-# Sur Linux
-xdg-open index.html
+   # Sur Linux
+   xdg-open index.html
 
-# Sur Windows
-start index.html
-```
+   # Sur Windows
+   start index.html
+   ```
 
 ---
 
 ## 🛠️ Technologies utilisées
-
-- **Frontend** : HTML5, CSS3 (Tailwind CSS via CDN), JavaScript (ES6+)
-- **Icons** : Lucide Icons
-- **Audio** : Web Speech API (synthèse vocale native)
-- **Hébergement** : GitHub Pages
-- **100% statique** : Pas de backend, pas de base de données, pas de dépendances externes
+- **Frontend** : HTML5, CSS3 (Tailwind CSS via CDN), JavaScript (ES6+).
+- **Icons** : Lucide Icons.
+- **Audio** : Web Speech API (synthèse vocale native).
+- **Hébergement** : GitHub Pages.
+- **100% statique** : Pas de backend, pas de base de données, pas de dépendances externes.
 
 ---
 
 ## 📜 Licence
+**© 2026 Octopi Dev - Tous droits réservés**
 
-**© Octopi Dev - Projet Personnel**
+### ✅ **Utilisation libre**
+- Accès au site en ligne.
+- Utilisation de toutes les fonctionnalités.
+- Partage du lien du site.
+- Téléchargement et utilisation du code **sans modification**.
 
-✅ **Utilisation libre** : Le site est accessible et utilisable gratuitement par tous.
-🔒 **Modification soumise à autorisation** : Toute modification du code nécessite une demande écrite explicite.
-📧 **Contact** : [octopidev.contact@gmail.com](mailto:octopidev.contact@gmail.com) pour les demandes d'autorisation.
+### 🏆 **Obligation d'attribution**
+Toute utilisation, distribution ou intégration de ce projet **doit inclure une attribution claire** à l'auteur original :
+- **Nom de l'auteur** : `Octopi Dev`
+- **Nom du projet** : `Learn Deutsch TOOLS`
+- **Lien vers le projet** : [https://dev-code3d.github.io/Learn-Deutsch-TOOLS/](https://dev-code3d.github.io/Learn-Deutsch-TOOLS/)
 
-*Les bibliothèques tierces (Tailwind CSS, Lucide Icons) restent sous leur licence respective (MIT/ISC).*
+**Exemple d'attribution** :
+> **"Outils linguistiques inspirés de [Learn Deutsch TOOLS](https://dev-code3d.github.io/Learn-Deutsch-TOOLS/) par Octopi Dev."**
+
+> **[Learn Deutsch TOOLS](https://dev-code3d.github.io/Learn-Deutsch-TOOLS/) By Octopi Dev.**
+
+⚠️ **Le non-respect de cette obligation constitue une violation des conditions d'utilisation.**
+
+### 🔒 **Modification soumise à autorisation**
+Toute modification du code, du design ou du contenu **nécessite une autorisation écrite explicite** de l'auteur.
+- **Contact** : [octopidev.contact@gmail.com](mailto:octopidev.contact@gmail.com)
+
+### 📦 **Dépendances externes**
+- **Tailwind CSS** ([MIT License](https://opensource.org/licenses/MIT))
+- **Lucide Icons** ([ISC License](https://opensource.org/licenses/ISC))
+- **Web Speech API** (Standard du web)
+
+*Pour plus de détails, consultez le fichier [LICENCE](LICENSE).*
 
 ---
-
-## 🎞️ Scan le qr-code pour acceder au site web :
-
+## 🎞️ Scan le QR-code pour accéder au site web :
 [![QR Code Learn Deutsch TOOLS](qrcode-learndeutschtools.png)](https://dev-code3d.github.io/Learn-Deutsch-TOOLS/index.html)
 
 ---
-
 *Viel Erfolg beim Deutschlernen! 🇩🇪✨*
+
+.

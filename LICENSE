@@ -1,36 +1,77 @@
 # Licence d'Utilisation - Learn Deutsch TOOLS
 
-**Copyright (c) Assem Dev - Tous droits réservés**
+**Copyright (c) 2026 Octopi Dev - Tous droits réservés**
 
 ---
 
-## 📜 Conditions d'Utilisation
+## 📜 **Conditions Générales d'Utilisation**
 
 ### ✅ **UTILISATION LIBRE**
-Ce projet est mis à disposition **gratuitement** pour une utilisation **personnelle, éducative ou professionnelle**. 
+Ce projet est mis à disposition **gratuitement** pour une utilisation **personnelle, éducative ou professionnelle**, sous réserve du respect des conditions suivantes.
+
 Toute personne peut :
-- Accéder au site en ligne
-- Utiliser toutes les fonctionnalités
-- Partager le lien du site
-- Télécharger et utiliser le code **sans modification**
+- Accéder au site en ligne.
+- Utiliser toutes les fonctionnalités proposées.
+- Partager le lien du site.
+- Télécharger et utiliser le code **sans modification**.
+
+---
+
+### 🏆 **OBLIGATION D'ATTRIBUTION**
+Toute utilisation, distribution, partage ou intégration de ce projet **doit impérativement inclure une attribution claire et visible** à l'auteur original.
+Cela signifie que vous devez **mentionner explicitement** :
+- **Le nom de l'auteur** : `Octopi Dev`
+- **Le nom du projet** : `Learn Deutsch TOOLS`
+- **Un lien vers le projet original** : [https://dev-code3d.github.io/Learn-Deutsch-TOOLS/](https://dev-code3d.github.io/Learn-Deutsch-TOOLS/)
+
+#### 📌 **Exemples d'attribution**
+1. **Dans un document** :
+   > **"Outils linguistiques inspirés de [Learn Deutsch TOOLS](https://dev-code3d.github.io/Learn-Deutsch-TOOLS/) par Octopi Dev."**
+
+   > **[Learn Deutsch TOOLS](https://dev-code3d.github.io/Learn-Deutsch-TOOLS/) By Octopi Dev.**
+
+⚠️ **Le non-respect de cette obligation constitue une violation des conditions d'utilisation** et peut entraîner le retrait des droits d'utilisation ou des actions légales.
 
 ---
 
 ### 🔒 **MODIFICATION : AUTORISATION OBLIGATOIRE**
 **Toute modification du code source, du design ou du contenu doit faire l'objet d'une demande écrite explicite à l'auteur.**
 
-- ❌ **Interdit** : Modifier, adapter, ou redistribuer une version modifiée **sans autorisation**
-- ✅ **Autorisé** : Modifier **uniquement après accord écrit** de l'auteur
+- ❌ **Interdit** :
+  - Modifier, adapter ou redistribuer une version modifiée **sans autorisation écrite**.
+  - Utiliser ce projet ou ses composants pour des activités illégales ou contraires à l'éthique.
 
-Pour demander une autorisation de modification, contactez :
-**Assem Dev** | [octopidev.contact@gmail.com](mailto:octopidev.contact@gmail.com)
+- ✅ **Autorisé** :
+  - Modifier le code **uniquement après accord écrit** de l'auteur.
+  - Proposer des suggestions d'amélioration via les canaux officiels (ex. : issues GitHub).
+
+**Contact pour demande d'autorisation** :
+> **Octopi Dev** | [octopidev.contact@gmail.com](mailto:octopidev.contact@gmail.com)
 
 ---
 
-### 📌 **Dépendance aux bibliothèques tierces**
-Ce projet utilise des bibliothèques externes sous leur propre licence :
-- **Tailwind CSS** (MIT License)
-- **Lucide Icons** (ISC License)
-- **Web Speech API** (Standard du web)
+### 📦 **DÉPENDANCES EXTERNES**
+Ce projet utilise des bibliothèques tierces soumises à leurs propres licences :
+- **Tailwind CSS** ([MIT License](https://opensource.org/licenses/MIT))
+- **Lucide Icons** ([ISC License](https://opensource.org/licenses/ISC))
+- **Web Speech API** (Standard du web, aucune licence spécifique)
 
-Ces dépendances restent régies par leurs licences respectives.
+Ces dépendances restent régies par leurs licences respectives. Vous êtes responsable de vous conformer à leurs conditions.
+
+---
+
+### ⚖️ **EXCLUSION DE GARANTIE**
+Ce projet est fourni **"EN L'ÉTAT"**, sans garantie d'aucune sorte, expresse ou implicite, y compris mais sans s'y limiter :
+- **Garantie de qualité marchande** ou d'adaptation à un usage particulier.
+- **Garantie de non-violation** des droits de tiers.
+
+L'auteur **ne saurait être tenu responsable** des dommages directs, indirects, accessoires ou consécutifs découlant de l'utilisation ou de l'impossibilité d'utiliser ce projet.
+
+---
+### 📜 **LOI APPLICABLE**
+Cette licence est régie par les lois en vigueur en **France**. Tout litige sera soumis à la compétence exclusive des tribunaux français.
+
+---
+**Dernière mise à jour** : 26 septembre 2026
+
+.
