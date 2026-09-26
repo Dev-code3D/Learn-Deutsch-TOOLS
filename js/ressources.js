@@ -10,9 +10,11 @@ const ONES = ["", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "a
 const TEENS = ["zehn", "elf", "zwölf", "dreizehn", "vierzehn", "fünfzehn", "sechzehn", "siebzehn", "achtzehn", "neunzehn"];
 const TENS = ["", "zehn", "zwanzig", "dreißig", "vierzig", "fünfzig", "sechzig", "siebzig", "achtzig", "neunzig"];
 
-function numberToGermanWords(num, withDashes = true) {
+const DIGIT_WORDS = ["null", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun"];
+
+function integerToGermanWords(num, withDashes = true) {
   if (num === 0) return "null";
-  if (num < 0) return "minus " + numberToGermanWords(Math.abs(num), withDashes);
+  if (num < 0) return "minus " + integerToGermanWords(Math.abs(num), withDashes);
 
   if (num < 10) return ONES[num];
   if (num < 20) return TEENS[num - 10];
@@ -28,26 +30,76 @@ function numberToGermanWords(num, withDashes = true) {
     const remainder = num % 100;
     const hundredPrefix = hundred === 1 ? (withDashes ? `ein<span class="dash">-</span>hundert` : "einhundert") : (withDashes ? `${ONES[hundred]}<span class="dash">-</span>hundert` : `${ONES[hundred]}hundert`);
     if (remainder === 0) return hundredPrefix;
-    const remainderText = numberToGermanWords(remainder, withDashes);
+    const remainderText = integerToGermanWords(remainder, withDashes);
     return withDashes ? `${hundredPrefix}<span class="dash">-</span>${remainderText}` : `${hundredPrefix}${remainderText}`;
   }
   if (num < 1000000) {
     const thousand = Math.floor(num / 1000);
     const remainder = num % 1000;
-    const thousandPrefix = thousand === 1 ? (withDashes ? `ein<span class="dash">-</span>tausend` : "eintausend") : (withDashes ? `${numberToGermanWords(thousand, withDashes)}<span class="dash">-</span>tausend` : `${numberToGermanWords(thousand, withDashes)}tausend`);
+    const thousandPrefix = thousand === 1 ? (withDashes ? `ein<span class="dash">-</span>tausend` : "eintausend") : (withDashes ? `${integerToGermanWords(thousand, withDashes)}<span class="dash">-</span>tausend` : `${integerToGermanWords(thousand, withDashes)}tausend`);
     if (remainder === 0) return thousandPrefix;
-    const remainderText = numberToGermanWords(remainder, withDashes);
+    const remainderText = integerToGermanWords(remainder, withDashes);
     return withDashes ? `${thousandPrefix}<span class="dash">-</span>${remainderText}` : `${thousandPrefix}${remainderText}`;
   }
   if (num < 1000000000) {
     const million = Math.floor(num / 1000000);
     const remainder = num % 1000000;
-    const millionWord = million === 1 ? (withDashes ? `eine<span class="dash">-</span>Million` : "eine Million") : (withDashes ? `${numberToGermanWords(million, withDashes)}<span class="dash">-</span>Millionen` : `${numberToGermanWords(million, withDashes)} Millionen`);
+    const millionWord = million === 1 ? (withDashes ? `eine<span class="dash">-</span>Million` : "eine Million") : (withDashes ? `${integerToGermanWords(million, withDashes)}<span class="dash">-</span>Millionen` : `${integerToGermanWords(million, withDashes)} Millionen`);
     if (remainder === 0) return millionWord;
-    const remainderText = numberToGermanWords(remainder, withDashes);
+    const remainderText = integerToGermanWords(remainder, withDashes);
     return withDashes ? `${millionWord}<span class="dash">-</span>${remainderText}` : `${millionWord}${remainderText}`;
   }
   return "Nombre trop grand (max 999 999 999)";
+}
+
+function convertNumberToGerman(inputStr, withDashes = true) {
+  if (typeof inputStr === "number") inputStr = String(inputStr);
+  if (!inputStr) return { html: "Entrez un nombre", speech: "" };
+  
+  const clean = inputStr.trim().replace(/\s+/g, "").replace(",", ".");
+  if (clean === "" || clean === "-" || clean === "." || isNaN(clean)) {
+    return { html: "Entrez un nombre valide (ex: 142 ou 1,67)", speech: "" };
+  }
+
+  const parts = clean.split(".");
+  const intStr = parts[0];
+  const intVal = parseInt(intStr, 10);
+
+  if (isNaN(intVal)) return { html: "Entrez un nombre valide", speech: "" };
+  if (Math.abs(intVal) > 999999999) return { html: "Nombre trop grand (max 999 999 999)", speech: "" };
+
+  const intHtml = integerToGermanWords(intVal, withDashes);
+  const intSpeech = integerToGermanWords(intVal, false);
+
+  if (parts.length === 1 || parts[1].length === 0) {
+    return { html: intHtml, speech: intSpeech };
+  }
+
+  const decStr = parts[1];
+  const decDigitsWords = decStr.split("").map(d => {
+    const n = parseInt(d, 10);
+    return isNaN(n) ? "" : DIGIT_WORDS[n];
+  }).filter(Boolean);
+
+  const dashSpan = withDashes ? `<span class="dash">-</span>` : "-";
+  const mainHtml = `${intHtml}${dashSpan}Komma${dashSpan}${decDigitsWords.join(dashSpan)}`;
+  const mainSpeech = `${intSpeech} Komma ${decDigitsWords.join(" ")}`;
+
+  let fullHtml = mainHtml;
+  if (decStr.length === 2) {
+    const twoDigitVal = parseInt(decStr, 10);
+    if (!isNaN(twoDigitVal) && twoDigitVal >= 10) {
+      const twoDigitHtml = integerToGermanWords(twoDigitVal, withDashes);
+      fullHtml += ` <span class="text-xs text-slate-400 font-normal block sm:inline mt-1 sm:mt-0 sm:ml-2">(aussi : ${intHtml} Komma ${twoDigitHtml})</span>`;
+    }
+  }
+
+  return { html: fullHtml, speech: mainSpeech };
+}
+
+// Backward compatibility alias
+function numberToGermanWords(num, withDashes = true) {
+  return convertNumberToGerman(num, withDashes).html;
 }
 
 function initNumberConverter() {
@@ -57,13 +109,10 @@ function initNumberConverter() {
   if (!input || !resultText) return;
 
   const update = () => {
-    const val = parseInt(input.value, 10);
-    if (isNaN(val)) {
-      resultText.innerHTML = "Entrez un nombre entier";
-      return;
-    }
-    const german = numberToGermanWords(val, true);
-    resultText.innerHTML = german;
+    const valStr = input.value;
+    const res = convertNumberToGerman(valStr, true);
+    resultText.innerHTML = res.html;
+    resultText.dataset.speech = res.speech;
   };
 
   input.addEventListener('input', update);
@@ -71,9 +120,9 @@ function initNumberConverter() {
 
   if (audioBtn) {
     audioBtn.addEventListener('click', () => {
-      const text = resultText.textContent;
-      if (text && !text.includes("Entrez")) {
-        speakGerman(text, audioBtn);
+      const speech = resultText.dataset.speech || resultText.textContent;
+      if (speech && !speech.includes("Entrez")) {
+        speakGerman(speech, audioBtn);
       }
     });
   }
